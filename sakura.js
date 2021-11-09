@@ -292,7 +292,7 @@ const App = {
 
     createCardsContent(anime, isBuy) {
         const el = document.createElement("div")
-        const img = document.createElement("iframe")
+        const img = document.createElement("video")
         const header = document.createElement("div")
         const container = document.createElement("div")
         const l5 = document.createElement("div")
@@ -327,7 +327,6 @@ const App = {
         img.controls = true
         img.autoplay = true
         img.loop = true
-
 
         //btn2.classList.add("next")
         //btn2.innerHTML = "&#10095;"
