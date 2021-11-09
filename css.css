@@ -3,16 +3,6 @@ body {
     padding: 0px;
   }
 
-.sakurax {
-  -webkit-text-stroke: 1px rgb(116, 116, 116);
-  color: #f78589;
-  font-weight: bold;
-  font-size: 20px;
-  font-family: sans-serif;
-  border: 0px solid red;
-  padding: 10px;
-  font-size: 20px;
-}
 /* ANIME - CARDS */
 .anime-card {
   width: 250px;
@@ -295,6 +285,26 @@ body {
   right: 75px;
   top: 227px;
   cursor: pointer;
+}
+
+.sakurax {
+  -webkit-text-stroke: 1px rgb(116, 116, 116);
+  color: #f78589;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: sans-serif;
+  border: 0px solid red;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.img-video {
+  width: 350px;
+  height: 250px;
+  background-size: cover;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Next & previous buttons */

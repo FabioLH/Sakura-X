@@ -16,7 +16,7 @@ const App = {
             {id: 1, nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Gasolina", 
             episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
             img: "https://animeshouse.net/wp-content/uploads/2021/10/32434.jpg",
-            vid: "https://www.youtube.com/watch?v=0lNjes4la9U"},
+            vid: "https://www.youtube.com/embed/0lNjes4la9U"},
             
             {id: 2, nomejp: "Mieruko-chan", nomeing: "Mieruko-chan", disponibilidade: "Funimation", genero: "Gasolina",
             episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
@@ -292,7 +292,7 @@ const App = {
 
     createCardsContent(anime, isBuy) {
         const el = document.createElement("div")
-        const img = document.createElement("video")
+        const img = document.createElement("iframe")
         const header = document.createElement("div")
         const container = document.createElement("div")
         const l5 = document.createElement("div")
@@ -308,7 +308,6 @@ const App = {
         const btn = document.createElement("button")
         const btn2 = document.createElement("button")
         const btn3 = document.createElement("button")
-        //const fot = [animelist.img]
 
         App.helpers.style(el, {
             textAlign: "center",
@@ -319,34 +318,32 @@ const App = {
             alignContent: "center",
         })
         
-        App.helpers.style(img, {
-            width: "350px",
-            height: "250px",
-        })
+        img.classList.add("img-video")
         img.src = anime.vid
-        img.controls = true
-        img.autoplay = true
-        img.loop = true
+        img.frameborder = "0"
+        img.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        img.allowfullscreen = "true"
 
-        //btn2.classList.add("next")
-        //btn2.innerHTML = "&#10095;"
-        //btn2.onclick = () => {
-         //   if (img.src === fot[fot.length - 1]) {
-         //       img.src = fot[0]
-          //  } else {
-          //      img.src = fot[fot.indexOf(img.src) + 1]
-          //  }
-      //  }
 
-       // btn3.classList.add("prev")
-        //btn3.innerHTML = "&#10094;"
-       // btn3.onclick = () => {
-          //  if (img.src === fot[0]) {
-           //     img.src = fot[fot.length - 1]
-           // } else {
-            //    img.src = fot[fot.indexOf(img.src) - 1]
-           // }
-      //  }
+        btn2.classList.add("next")
+        btn2.innerHTML = "&#10095;"
+        btn2.onclick = () => {
+            if (img.src === fot[fot.length - 1]) {
+                img.src = fot[0]
+            } else {
+                img.src = fot[fot.indexOf(img.src) + 1]
+            }
+        }
+
+        btn3.classList.add("prev")
+        btn3.innerHTML = "&#10094;"
+        btn3.onclick = () => {
+            if (img.src === fot[0]) {
+                img.src = fot[fot.length - 1]
+            } else {
+                img.src = fot[fot.indexOf(img.src) - 1]
+            }
+        }
 
         header.classList.add("anime-card-header")
         header.innerHTML = anime.nomejp
