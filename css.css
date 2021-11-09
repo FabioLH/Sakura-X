@@ -1,0 +1,343 @@
+body {
+    margin: 0px;
+    padding: 0px;
+  }
+
+.sakurax {
+  -webkit-text-stroke: 1px rgb(116, 116, 116);
+  color: #f78589;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: sans-serif;
+  border: 0px solid red;
+  padding: 10px;
+  font-size: 20px;
+}
+/* ANIME - CARDS */
+.anime-card {
+  width: 250px;
+  height: 352px;
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 14px;
+  align-content: center;
+  overflow: auto;
+  overflow-x: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 2px #c5c5c5;
+}
+
+.anime-card-header {
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  padding: 1vh;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-family: sans-serif;
+}
+
+.anime-card-img {
+  display: block;
+  min-width: 270px;
+  min-height: 200px;
+  margin: 0px;
+}
+
+.anime-card-btn {
+  min-width: 7vw;
+  min-height: 5vh;
+  background: #4E9DCA;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-size: 13px;
+}
+
+.anime-card-container {
+  display: grid;
+  grid-template-columns: 0fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  min-width: 15vw;
+  min-height: 15vh;
+  font-family: sans-serif;
+
+  grid-auto-flow: row;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+
+  grid-template-areas:
+    "anime-card-l1 anime-card-v1"
+    "anime-card-l2 anime-card-v2"
+    "anime-card-l3 anime-card-v3"
+    "anime-card-l4 anime-card-v4"
+    "anime-card-l5 anime-card-v5"
+    "anime-card-l6 anime-card-v6"
+    "anime-card-l7 anime-card-v7"
+    "anime-card-l8 anime-card-v8"
+    "anime-card-l9 anime-card-v9";
+}
+
+.anime-card-l1 {
+  grid-area: anime-card-l1;
+}
+.anime-card-v1 {
+  grid-area: anime-card-v1;
+}
+
+.anime-card-l2 {
+  grid-area: anime-card-l2;
+}
+.anime-card-v2 {
+  grid-area: anime-card-v2;
+}
+
+.anime-card-l3 {
+  grid-area: anime-card-l3;
+}
+.anime-card-v3 {
+  grid-area: anime-card-v3;
+}
+
+.anime-card-l4 {
+  grid-area: anime-card-l4;
+}
+.anime-card-v4 {
+  grid-area: anime-card-v4;
+}
+
+.anime-card-l5 {
+  grid-area: anime-card-l5;
+  border-bottom: 1px solid #4E9DCA;
+  border-left: 1px solid #4E9DCA;
+  border-top: 1px solid #4E9DCA;
+}
+.anime-card-v5 {
+  grid-area: anime-card-v5;
+  border-bottom: 1px solid #4E9DCA;
+  border-right: 1px solid #4E9DCA;
+  border-top: 1px solid #4E9DCA;
+}
+
+.anime-card-l6 {
+  grid-area: anime-card-l6;
+  border-bottom: 1px solid #4E9DCA;
+  border-left: 1px solid #4E9DCA;
+}
+.anime-card-v6 {
+  grid-area: anime-card-v6;
+  border-bottom: 1px solid #4E9DCA;
+  border-right: 1px solid #4E9DCA;
+}
+
+.anime-card-l7 {
+  grid-area: anime-card-l7;
+  border-bottom: 1px solid #4E9DCA;
+  border-left: 1px solid #4E9DCA;
+}
+.anime-card-v7 {
+  grid-area: anime-card-v7;
+  border-bottom: 1px solid #4E9DCA;
+  border-right: 1px solid #4E9DCA;
+}
+
+.anime-card-l8 {
+  grid-area: anime-card-l8;
+  border-bottom: 1px solid #4E9DCA;
+  border-left: 1px solid #4E9DCA;
+
+}
+.anime-card-v8 {
+  grid-area: anime-card-v8;
+  border-bottom: 1px solid #4E9DCA;
+  border-right: 1px solid #4E9DCA;
+}
+
+.anime-card-l9 {
+  grid-area: anime-card-l9;
+  border-bottom: 1px solid #4E9DCA;
+  border-left: 1px solid #4E9DCA;
+
+}
+.anime-card-v9 {
+  grid-area: anime-card-v9;
+  border-bottom: 1px solid #4E9DCA;
+  border-right: 1px solid #4E9DCA;
+}
+
+
+/* ScrollBar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EDEDED;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+.anim-card-btn {
+  min-width: 7vw;
+  min-height: 5vh;
+  background: #4E9DCA;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-size: 13px;
+  font-weight: bold;
+  box-shadow: 0px 0px 10px 0px #4E9DCA;
+}
+
+.el-container2-el {
+  width: 350px;
+  height: 350px;
+  position: relative;
+  background: white;
+  border-radius: 10px;
+  padding-bottom: 5px;
+  text-align: center;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  box-shadow: 0px 0px 3px 0px #dddddd;
+}
+
+.account-btn2 {
+  background-color: #4E9DCA;
+  width: 100px; 
+  color: black; 
+  border: 1px solid black;
+  border-radius: 5px; 
+  padding: 10px; 
+  font-size: 15px; 
+  cursor: pointer;
+}
+
+.forgot-password {
+  font-family: sans-serif; 
+  font-size: 10px;
+  cursor: pointer; 
+  width: 200px;
+  color: #4E9DCA; 
+  margin-top: -30px;
+  font-weight: bold; 
+  text-align: right;
+}
+
+.criar-conta {
+  color: #4E9DCA;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.el-novaacc-el {
+  width: 350px;
+  height: 350px;
+  background: white;
+  position: relative;
+  border-radius: 10px;
+  padding-bottom: 5px;
+  text-align: center;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  box-shadow: 0px 0px 3px 0px #dddddd;
+}
+
+.ver-password {
+  width: 20px;
+  position: absolute;
+  right: 75px;
+  top: 178px;
+  cursor: pointer;
+}
+
+.ver-password2 {
+  width: 20px;
+  position: absolute;
+  right: 75px;
+  top: 187px;
+  cursor: pointer;
+}
+
+.ver-password3 {
+  width: 20px;
+  position: absolute;
+  right: 75px;
+  top: 227px;
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 10px;
+  margin-top: -100px;
+  margin-left: 320px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.prev {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 10px;
+  margin-top: -100px;
+  margin-right: 320px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
