@@ -324,7 +324,6 @@ const App = {
         img.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         img.allowfullscreen = "true"
 
-
         btn2.classList.add("next")
         btn2.innerHTML = "&#10095;"
         btn2.onclick = () => {
@@ -381,7 +380,7 @@ const App = {
        // l9.classList.add("cars-card-l9")
         //v9.classList.add("cars-card-v9")
 
-        btn.classList.add("cars-card-btn")
+        btn.classList.add("anime-card-btn")
         btn.innerHTML = isBuy ? "Favoritar" : "Desfavoritar"
         btn.style.marginTop = "5px"
         btn.onclick = () => {
