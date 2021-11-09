@@ -14,9 +14,9 @@ const App = {
 
         animelist: [
             {id: 1, nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Gasolina", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
+            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "Segunda-feira",
             img: "https://animeshouse.net/wp-content/uploads/2021/10/32434.jpg",
-            vid: "https://www.youtube.com/embed/0lNjes4la9U"},
+            vid: "https://www.youtube-nocookie.com/embed/0lNjes4la9U"},
             
             {id: 2, nomejp: "Mieruko-chan", nomeing: "Mieruko-chan", disponibilidade: "Funimation", genero: "Gasolina",
             episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
