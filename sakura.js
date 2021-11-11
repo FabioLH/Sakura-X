@@ -13,97 +13,111 @@ const App = {
     state: {
 
         animelist: [
-            {id: 1, nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Gasolina", 
+            {id: 1, season: "S1", nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Ação", 
             episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "Segunda-feira",
             img: "https://animeshouse.net/wp-content/uploads/2021/10/32434.jpg",
             vid: "https://www.youtube-nocookie.com/embed/0lNjes4la9U"},
             
-            {id: 2, nomejp: "Mieruko-chan", nomeing: "Mieruko-chan", disponibilidade: "Funimation", genero: "Gasolina",
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
-            img: "https://ogre.natalie.mu/media/news/comic/2021/0716/mieruko_Teaser2.jpg",},
+            {id: 2, season: "S1", nomejp: "Mieruko-chan", nomeing: "Mieruko-chan", disponibilidade: "Funimation", genero: "Comédia, Horror",
+            episodios: "12", temporada: "Outubro 2021", link: "https://www.funimation.com/shows/mieruko-chan/?qid=", epnovo: "segunda",
+            img: "https://fictionhorizon.com/wp-content/uploads/2021/09/Mieruko-chan-Anime-Cover.jpg",
+            vid: "https://www.youtube-nocookie.com/embed/GfR0u_71jRA"},
 
-            {id: 3, nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Netflix", genero: "Gasolina",
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
-            img: "",},
+            {id: 3, season: "S1", nomejp: "Hepburn: Eiti Shikkusuy", nomeing: "86 EIGHTY-SIX", disponibilidade: "Crunchyroll", genero: "Drama",
+            episodios: "23", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/pt-br/86-eighty-six", epnovo: "segunda",
+            img: "https://metagalaxia.com.br/wp-content/uploads/2021/06/86-eighty-six-resenha-anime-02.jpg",
+            vid: "https://www.youtube-nocookie.com/embed/fQoxKVLkrEY"},
 
-            {id: 4, nomejp: "Guranburu", nomeing: "Grand Blue Dreaming", disponibilidade: "Amazon Prime", genero: "Gasolina",
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
-            img: "https://wallpapercave.com/wp/wp4507902.jpg",},
+            {id: 4, season: "S1", nomejp: "Guranburu", nomeing: "Grand Blue Dreaming", disponibilidade: "Amazon Prime", genero: "Comédia",
+            episodios: "12", temporada: "Outubro 2021", link: "https://www.primevideo.com/detail/0R9VJMVT7G1I5K03IUINLFHRBO/ref=atv_hm_hom_1_c_7d0kid_2_1", epnovo: "Finalizado",
+            img: "https://wallpapercave.com/wp/wp4507902.jpg",
+            vid: "https://www.youtube-nocookie.com/embed/7ygvyKSnmkI"},
             
-            {id: 5, nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Gasolina", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
+            {id: 5, season: "S1", nomejp: "Saihate no Paladin", nomeing: "The Faraway Paladin", disponibilidade: "Crunchyroll", genero: "Aventura, Fantasia", 
+            episodios: "Unknown", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/the-faraway-paladin", epnovo: "segunda",
+            img: "https://noobz.com.br/wp-content/uploads/2021/08/The-Faraway-Paladin.jpg",
+            vid: "https://www.youtube-nocookie.com/embed/OfEv9N-E0wE"},
+
+            {id: 6, season: "S1", nomejp: "Maburavu orutaneitivu", nomeing: "Muv-Luv Alternative", disponibilidade: "Crunchyroll", genero: "Mecha, Militar", 
+            episodios: "12", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/muv-luv-alternative", epnovo: "segunda",
+            img: "https://img.youtube.com/vi/g6gATcNgk9s/maxresdefault.jpg",
+            vid: "https://www.youtube-nocookie.com/embed/ftuD73sXiHU"},
+
+            {id: 7, season: "S1", nomejp: "Sekai Saikō no Ansatsusha", nomeing: "The World's Best Assassin", disponibilidade: "Crunchyroll", genero: "Ação", 
+            episodios: "12", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/pt-br/the-worlds-finest-assassin-gets-reincarnated-in-another-world-as-an-aristocrat", epnovo: "segunda",
+            img: "https://www.animesxis.com.br/wp-content/uploads/2021/02/The-Worlds-Finest-Assassin-Gets-Reincarnated-in-a-Different-World-as-an-Aristocrat-novel-2.jpg",
+            vid: "https://www.youtube-nocookie.com/embed/0PzC2F-tiME"},
+
+            {id: 8, season: "S1", nomejp: "Kobayashi-san Chi no Maid Dragon", nomeing: "Miss Kobayashi's Dragon Maid", disponibilidade: "Crunchyroll", genero: "Romance, Comédia, Fantasia", 
+            episodios: "25", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/pt-br/miss-kobayashis-dragon-maid", epnovo: "segunda",
+            img: "https://criticalhits.com.br/wp-content/uploads/2021/07/AN_Miss-Kobayashis-Dragon-Maid.jpg",
+            vid: "https://www.youtube-nocookie.com/embed/YVAnyHveq6E"},
+
+            {id: 9, season: "S1", nomejp: "Shinka no Mi", nomeing: "The Fruit of Evolution", disponibilidade: "Crunchyroll", genero: "Fantasia, Romance", 
+            episodios: "12", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/pt-br/the-fruit-of-evolution-before-i-knew-it-my-life-had-it-made", epnovo: "segunda",
+            img: "https://animemanganews.com/wp-content/uploads/2021/10/the-fruit-of-evolution-before-i-knew-it-my-life-had-it-made-episode-1-release-date-61559b1e0e1ed-1633000222-e1633193366419.jpg",
+            vid: "https://www.youtube-nocookie.com/embed/P441kTYtx1Q"},
+
+            {id: 10, season: "S1", nomejp: "Bokutachi no Rimeiku", nomeing: "Remake Our Life!", disponibilidade: "Crunchyroll", genero: "Drama, Romance", 
+            episodios: "12", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/pt-br/remake-our-life", epnovo: "Finalizado",
+            img: "https://www.animeunited.com.br/oomtumtu/2021/07/4mZoVBp6ePNZMkmPSJK6vPKejwZ.jpg",
+            vid: "https://www.youtube-nocookie.com/embed/T1kzGVmqdmY"},
+
+            {id: 11, season: "S1", nomejp: "Tōkyō Ribenjāzu", nomeing: "Tokyo Revengers", disponibilidade: "Crunchyroll", genero: "Drama, Ação", 
+            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/pt-br/tokyo-revengers", epnovo: "Finalizado",
+            img: "https://wallpapercave.com/wp/wp9016814.jpg",
+            vid: "https://www.youtube-nocookie.com/embed/ZUzQQAZZqO4"},
+
+            {id: 12, season: "S5", nomejp: "Boku no Hīrō Akademia", nomeing: "My Hero Academia", disponibilidade: "Crunchyroll", genero: "Ação", 
+            episodios: "25", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "Finalizado",
+            img: "https://kakuchopurei.com/wp-content/uploads/2021/02/My-Hero-Academia-Season-5-1-1.jpg",
+            vid: "https://www.youtube-nocookie.com/embed/zkGSYFke1oE"},
+
+            {id: 13, season: "S1", nomejp: "Tonikaku Kawaii", nomeing: "TONIKAWA: Over The Moon For You", disponibilidade: "Crunchyroll", genero: "Romance, Comédia", 
+            episodios: "13", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/pt-br/tonikawa-over-the-moon-for-you", epnovo: "Finalizado",
+            img: "https://geekverso.com/wp-content/uploads/2020/08/TONIKAWA-Over-The-Moon-For-You.png",
+            vid: "https://www.youtube-nocookie.com/embed/oEfNqrkatII"},
+
+            {id: 14, season: "S1", nomejp: "Ao-chan wa Benkyō ga Dekinai", nomeing: "Ao-chan Can't Study!", disponibilidade: "Crunchyroll", genero: "Finalizado", 
+            episodios: "12", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/pt-br/ao-chan-cant-study", epnovo: "Finalizado",
+            img: "https://ostnime.com/wp-content/uploads/2019/08/Midara-na-Ao-chan-wa-Benkyou-ga-Dekinai.png",
+            vid: "https://www.youtube-nocookie.com/embed/qN17SimWp0U"},
+
+            {id: 15, season: "Movie", nomejp: "BLACKFOX", nomeing: "BLACKFOX", disponibilidade: "Crunchyroll", genero: "Ação, Drama", 
+            episodios: "1", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/pt-br/blackfox", epnovo: "Finalizado",
+            img: "https://i.ytimg.com/vi/OeZn_Yyd_g8/maxresdefault.jpg",
+            vid: "https://www.youtube-nocookie.com/embed/6Q1cIHo7SdQ"},
+
+            {id: 16, season: "", nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Finalizado", 
+            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "Finalizado",
             img: "",},
 
-            {id: 6, nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Gasolina", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
+            {id: 17, season: "", nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Finalizado", 
+            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "Finalizado",
             img: "",},
 
-            {id: 7, nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Gasolina", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
+            {id: 18, season: "", nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Finalizado", 
+            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "Finalizado",
             img: "",},
 
-            {id: 8, nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Gasolina", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
+            {id: 19, season: "", nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Finalizado", 
+            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "Finalizado",
             img: "",},
 
-            {id: 9, nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Gasolina", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
+            {id: 20, season: "", nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Finalizado", 
+            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "Finalizado",
             img: "",},
 
-            {id: 10, nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Gasolina", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
+            {id: 21, season: "", nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Finalizado", 
+            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "Finalizado",
             img: "",},
 
-            {id: 11, nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Gasolina", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
+            {id: 22, season: "", nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Finalizado", 
+            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "Finalizado",
             img: "",},
 
-            {id: 12, nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Gasolina", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
-            img: "",},
-
-            {id: 13, nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Gasolina", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
-            img: "",},
-
-            {id: 13, nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Gasolina", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
-            img: "",},
-
-            {id: 14, nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Gasolina", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
-            img: "",},
-
-            {id: 14, nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Gasolina", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
-            img: "",},
-
-            {id: 15, nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Gasolina", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
-            img: "",},
-
-            {id: 16, nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Gasolina", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
-            img: "",},
-
-            {id: 17, nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Gasolina", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
-            img: "",},
-
-            {id: 17, nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Gasolina", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
-            img: "",},
-
-            {id: 18, nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Gasolina", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
-            img: "",},
-
-            {id: 19, nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Gasolina", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
-            img: "",},
-
-            {id: 20, nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Gasolina", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "segunda",
+            {id: 23, season: "", nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Finalizado", 
+            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "Finalizado",
             img: "",},
         ],
 
@@ -200,18 +214,18 @@ const App = {
 
         l1.innerHTML = "Nome JP:"
         v1.innerHTML = anime.nomejp
-        l1.classList.add("cars-card-l1")
-        v1.classList.add("cars-card-v1")
+        l1.classList.add("anime-card-l1")
+        v1.classList.add("anime-card-v1")
 
         l2.innerHTML = "Nome EN:"
         v2.innerHTML = anime.nomeing
-        l2.classList.add("cars-card-l2")
-        v2.classList.add("cars-card-v2")
+        l2.classList.add("anime-card-l2")
+        v2.classList.add("anime-card-v2")
 
         l3.innerHTML = "Temporada:"
         v3.innerHTML = anime.temporada
-        l3.classList.add("cars-card-l3")
-        v3.classList.add("cars-card-v3")
+        l3.classList.add("anime-card-l3")
+        v3.classList.add("anime-card-v3")
 
         l4.innerHTML = "Disponível:"
         v4.innerHTML = anime.disponibilidade
@@ -227,15 +241,15 @@ const App = {
         if (anime.disponibilidade === "Amazon Prime") {
             v4.style.color = "#00A8E1"
         }
-        l4.classList.add("cars-card-l4")
-        v4.classList.add("cars-card-v4")
+        l4.classList.add("anime-card-l4")
+        v4.classList.add("anime-card-v4")
 
         l5.innerHTML = "Motor:"
         l5.style.display = "none"
         v5.innerHTML = ""
         v5.style.display = "none"
-        l5.classList.add("cars-card-l5")
-        v5.classList.add("cars-card-v5")
+        l5.classList.add("anime-card-l5")
+        v5.classList.add("anime-card-v5")
 
 
         container.appendChild(l1)
@@ -273,7 +287,7 @@ const App = {
         img.src = anime.img
 
         header.classList.add("anime-card-header")
-        header.innerHTML = anime.nomejp
+        header.innerHTML = anime.nomeing + " - " + anime.season
 
         btn.classList.add("anime-card-btn")
         btn.innerHTML = isBuy ? "+Detalhes" : "Retirar"
@@ -306,8 +320,6 @@ const App = {
         const l9 = document.createElement("div")
         const v9 = document.createElement("div")
         const btn = document.createElement("button")
-        const btn2 = document.createElement("button")
-        const btn3 = document.createElement("button")
 
         App.helpers.style(el, {
             textAlign: "center",
@@ -324,45 +336,25 @@ const App = {
         img.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         img.allowfullscreen = "true"
 
-        btn2.classList.add("next")
-        btn2.innerHTML = "&#10095;"
-        btn2.onclick = () => {
-            if (img.src === fot[fot.length - 1]) {
-                img.src = fot[0]
-            } else {
-                img.src = fot[fot.indexOf(img.src) + 1]
-            }
-        }
-
-        btn3.classList.add("prev")
-        btn3.innerHTML = "&#10094;"
-        btn3.onclick = () => {
-            if (img.src === fot[0]) {
-                img.src = fot[fot.length - 1]
-            } else {
-                img.src = fot[fot.indexOf(img.src) - 1]
-            }
-        }
-
         header.classList.add("anime-card-header")
-        header.innerHTML = anime.nomejp
+        header.innerHTML = anime.nomeing
 
         container.classList.add("anime-card-container")
 
         l5.innerHTML = "Gênero:"
         v5.innerHTML = anime.genero
-        l5.classList.add("cars-card-l5")
-        v5.classList.add("cars-card-v5")
+        l5.classList.add("anime-card-l5")
+        v5.classList.add("anime-card-v5")
 
         l6.innerHTML = "Episódios:"
         v6.innerHTML = anime.episodios
-        l6.classList.add("cars-card-l6")
-        v6.classList.add("cars-card-v6")
+        l6.classList.add("anime-card-l6")
+        v6.classList.add("anime-card-v6")
 
         l7.innerHTML = "Ep. novo:"
         v7.innerHTML = anime.epnovo
-        l7.classList.add("cars-card-l7")
-        v7.classList.add("cars-card-v7")
+        l7.classList.add("anime-card-l7")
+        v7.classList.add("anime-card-v7")
 
         l8.innerHTML = "Link:"
         v8.innerHTML = "Assista aqui"
@@ -372,13 +364,13 @@ const App = {
         v8.onclick = () => {
             window.open(anime.link)
         }
-        l8.classList.add("cars-card-l8")
-        v8.classList.add("cars-card-v8")
+        l8.classList.add("anime-card-l8")
+        v8.classList.add("anime-card-v8")
 
         //l9.innerHTML = ""
         //v9.innerHTML = ""
-       // l9.classList.add("cars-card-l9")
-        //v9.classList.add("cars-card-v9")
+        //l9.classList.add("anime-card-l9")
+        //v9.classList.add("anime-card-v9")
 
         btn.classList.add("anime-card-btn")
         btn.innerHTML = isBuy ? "Favoritar" : "Desfavoritar"
@@ -410,8 +402,6 @@ const App = {
         container.appendChild(l9)
         container.appendChild(v9)
         el.appendChild(btn)
-        el.appendChild(btn2)
-        el.appendChild(btn3)
         return el
     },
 
@@ -453,7 +443,7 @@ const App = {
         App.helpers.style(els.sakurax, {
             backgroundImage: "url(https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/35950/cherry-blossoms-branch-clipart-xl.png",
             backgroundSize: "10vw",
-            backgroundPosition: "0% 45%",
+            backgroundPosition: "50% 45%",
             backgroundRepeat: "no-repeat",
         })
 
@@ -495,14 +485,15 @@ const App = {
             fontFamily: "sans-serif",
             fontSize: "15px",
             fontWeight: "bold",
-            padding: "14px",
-            width: "200px",
+            paddingBottom: "10px",
+            paddingRight: "30px",
+            paddingTop: "10px",
         })
-        els.isl.innerHTML = "The anime island"
+        els.isl.innerHTML = "My anime schedule"
         App.helpers.style(els.isl, {
-            backgroundImage: "url(https://i1.wp.com/azurebane.com/wp-content/uploads/2021/08/island2.png?resize=188%2C188&ssl=1",
-            backgroundSize: "50px",
-            backgroundPosition: "96% 45%",
+            backgroundImage: "url(https://i.pinimg.com/originals/b5/90/e9/b590e99ca1d53d99a21c1cd01e987583.png",
+            backgroundSize: "30px",
+            backgroundPosition: "100% 0%",
             backgroundRepeat: "no-repeat",
         })
 
