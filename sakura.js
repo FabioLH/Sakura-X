@@ -2,6 +2,9 @@ const App = {
     init() {
         this.controllers.createComponents()
         this.controllers.modalSite()
+        this.controllers.modalUser()
+        this.controllers.modalAlert()
+        this.controllers.jaAdd()
         this.controllers.headerSite()
         this.controllers.bodySite()
         this.controllers.renderAllAnimeCards()
@@ -130,6 +133,157 @@ const App = {
         App.elements.modal.backdrop.style.display = "flex"
         App.elements.modal.container.body.innerHTML = ""
         App.elements.modal.container.body.appendChild(body)
+    },
+
+    modalUser(){
+        const el = App.elements.conta;
+
+        App.helpers.style(el.backdrop2, {position: "absolute", left: 0, top: 0, width: "100%", height: "100%",
+        background: "rgba(0, 0, 0, 0)", display: "none", justifyContent: "flex-end",overflow: "auto"})
+
+        el.container2.el.classList.add("el-container2-el")
+
+        App.helpers.style(el.container2.title, {display:"flex" ,textFamily: "sans-serif", textAlign: "center", fontSize: "14px",
+        color: "black", fontWeight: "", cursor: "pointer", width: "100%", height: "100%", justifyContent: "center",
+        alignItems: "center",})
+        el.container2.title.innerHTML = "Minha conta"
+        el.container2.title.onclick = function(){
+            window.location.href = ""
+        }
+        el.container2.title.onmouseover = () => {
+            el.container2.title.style.backgroundColor = "#a5d1eb"
+        }
+        el.container2.title.onmouseout = () => {
+            el.container2.title.style.backgroundColor = ""
+        }
+
+        App.helpers.style(el.container2.header2, {textFamily: "sans-serif", textAlign: "center", fontSize: "14px",
+        cursor: "pointer", color: "black", fontWeight: "",  width: "100%", height: "100%", justifyContent: "center",
+        alignItems: "center", display: "flex"})
+        el.container2.header2.innerHTML = "Sair"
+        el.container2.header2.onclick = () => {
+            localStorage.removeItem("token")
+            localStorage.removeItem("userLogado")
+            window.location.reload()
+        }
+        el.container2.header2.onmouseover = () => {
+            el.container2.header2.style.backgroundColor = "#a5d1eb"
+        }
+        el.container2.header2.onmouseout = () => {
+            el.container2.header2.style.backgroundColor = ""
+        }
+
+        App.elements.header.users.user.onclick = () => {
+            if (localStorage.getItem("token") === null) {
+                window.location.href = ""
+            } else if (el.backdrop2.style.display === "none") {
+                el.backdrop2.style.display = "flex"
+            } else {
+                el.backdrop2.style.display = "none"
+            } 
+        }
+
+        el.backdrop2.onclick = (evt) => {
+            if (evt.target === el.backdrop2) {
+                el.backdrop2.style.display = "none"
+            }
+        }
+
+        el.container2.el.appendChild(el.container2.title)
+        el.container2.el.appendChild(el.container2.header2)
+        el.backdrop2.appendChild(el.container2.el)
+        App.elements.app.appendChild(el.backdrop2)
+    },
+
+    modalAlert(){
+        const el = App.elements.alerta
+
+        App.helpers.style(el.backdrop3, {position: "absolute", left: 0, top: 0, width: "100%", height: "100%",
+        background: "rgba(0, 0, 0, 0.5)", display: "none", justifyContent: "center", alignContent: "center", 
+        overflow: "auto", alignItems: "center"})
+
+        el.container3.el.classList.add("el-alerta-el")
+
+        App.helpers.style(el.container3.title2, {textFamily: "sans-serif", textAlign: "center", fontSize: "20px",
+        color: "#4E9DCA", fontWeight: "bold", position: "relative"})
+        el.container3.title2.innerHTML = "Acesse a sua conta"
+
+        App.helpers.style(el.container3.title3, {textFamily: "sans-serif", textAlign: "center", fontSize: "16px", position: "relative"})
+
+        el.container3.btn4.classList.add("entrar-conta")
+        el.container3.btn4.innerHTML = "Entrar"
+
+        el.container3.btn4.onclick = () => {
+            window.location.href = ""
+        }
+
+        App.helpers.style(el.container3.cad, {textFamily: "sans-serif", textAlign: "center", fontSize: "16px", cursor: "pointer",})
+        el.container3.cad.innerHTML = "Não tem uma conta? <span class='criar-conta'>Crie uma agora!</span>"
+
+        el.container3.cad.onclick = () => {
+            window.location.href = ""
+        }
+
+        App.helpers.style(el.container3.close2.el, {
+            border: "0px solid blue",
+            paddingRight: "5px",
+            margin: "0px",
+            display: "flex",
+            justifyContent: "flex-end"
+        })
+
+        el.container3.close2.btn5.innerHTML = "X"
+        App.helpers.style(el.container3.close2.btn5, {
+            cursor: "pointer",
+            fontFamily: "sans-serif"
+        })
+
+        el.backdrop3.onclick = (evt) => {
+            if (evt.target === el.backdrop3) {
+                el.backdrop3.style.display = "none"
+            }
+        }
+
+        el.container3.close2.el.appendChild(el.container3.close2.btn5)
+        el.container3.el.appendChild(el.container3.title2)
+        el.container3.el.appendChild(el.container3.title3)
+        el.container3.el.appendChild(el.container3.btn4)
+        el.container3.el.appendChild(el.container3.cad)
+        el.backdrop3.appendChild(el.container3.el)
+        App.elements.app.appendChild(el.backdrop3)
+    },
+
+    jaAdd(){
+        const el = App.elements.alerta2
+
+        App.helpers.style(el.backdrop4, {position: "absolute", left: 0, top: 0, width: "100%", height: "100%",
+        background: "rgba(0, 0, 0, 0.5)", display: "none", justifyContent: "center", alignContent: "center", 
+        overflow: "auto", alignItems: "center"})
+
+        el.container4.el.classList.add("el-alerta-el")
+
+        App.helpers.style(el.container4.title, {textFamily: "sans-serif", textAlign: "center", fontSize: "20px",
+        color: "#4E9DCA", fontWeight: "bold", position: "relative"})
+        el.container4.title.innerHTML = "Esse anime já foi adicionado na sua agenda"
+
+        App.helpers.style(el.container4.gif, {
+            width: "60%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+        })
+
+
+        el.backdrop4.onclick = (evt) => {
+            if (evt.target === el.backdrop4) {
+                el.backdrop4.style.display = "none"
+            }
+        }
+
+        el.container4.el.appendChild(el.container4.title)
+        el.container4.el.appendChild(el.container4.gif)
+        el.backdrop4.appendChild(el.container4.el)
+        App.elements.app.appendChild(el.backdrop4)
     },
      
     hideModal() {
@@ -266,7 +420,7 @@ const App = {
         return container
     },
 
-    createAnimCards(anime, isBuy) {
+    createAnimCards(anime) {
         const el = document.createElement("div")
         const header = document.createElement("div")
         const img = document.createElement("img")
@@ -290,9 +444,9 @@ const App = {
         header.innerHTML = anime.nomeing + " - " + anime.season
 
         btn.classList.add("anime-card-btn")
-        btn.innerHTML = isBuy ? "+Detalhes" : "Retirar"
+        btn.innerHTML = "+Detalhes"
         btn.onclick = () => {
-            const content = App.controllers.createCardsContent(anime, isBuy)
+            const content = App.controllers.createCardsContent(anime)
             App.controllers.showModal(content)
         }
 
@@ -304,7 +458,7 @@ const App = {
         return el
     },
 
-    createCardsContent(anime, isBuy) {
+    createCardsContent(anime) {
         const el = document.createElement("div")
         const img = document.createElement("iframe")
         const header = document.createElement("div")
@@ -367,26 +521,38 @@ const App = {
         l8.classList.add("anime-card-l8")
         v8.classList.add("anime-card-v8")
 
-        //l9.innerHTML = ""
-        //v9.innerHTML = ""
-        //l9.classList.add("anime-card-l9")
-        //v9.classList.add("anime-card-v9")
-
         btn.classList.add("anime-card-btn")
-        btn.innerHTML = isBuy ? "Favoritar" : "Desfavoritar"
+        btn.innerHTML = "Add na minha agenda"
         btn.style.marginTop = "5px"
+        let ListaAnime = JSON.parse(localStorage.getItem("ListaAnime") || "[]")
         btn.onclick = () => {
             if (localStorage.getItem("token") === null) {
                 App.controllers.hideModal()
-                //App.elements.alerta.backdrop3.style.display = "flex"
-                //App.elements.alerta.container3.title3.innerHTML = "Entre no Projeto X para adicionar anúncios aos seus favoritos."
-            } else if (isBuy) {
-                //App.controllers.favFlow(cars)
+                App.elements.alerta.backdrop3.style.display = "flex"
+                App.elements.alerta.container3.title3.innerHTML = "Entre na Sakura Petal para adicionar animes na sua agenda"
+            } else if (ListaAnime.length === 0) {
+                ListaAnime.push(anime)
+                localStorage.setItem("ListaAnime", JSON.stringify(ListaAnime))
             } else {
-                //App.controllers.desfavFlow(cars)
-            } 
+                let existe = false
+                for (let i = 0; i < ListaAnime.length; i++) {
+                    if (ListaAnime[i].nomeing === anime.nomeing) {
+                        existe = true
+                    }
+                }
+                if (existe === false) {
+                    ListaAnime.push(anime)
+                    localStorage.setItem("ListaAnime", JSON.stringify(ListaAnime))
+                    App.elements.alerta2.backdrop4.style.display = "flex"
+                    App.elements.alerta2.container4.title.innerHTML = "Anime adicionado com sucesso!"
+                    App.elements.alerta2.container4.gif.src = "https://c.tenor.com/9Iru6GJCKtMAAAAC/anime-okay.gif"
+                } else {
+                    App.elements.alerta2.backdrop4.style.display = "flex"
+                    App.elements.alerta2.container4.title.innerHTML = "Anime já adicionado!"
+                    App.elements.alerta2.container4.gif.src = "https://c.tenor.com/WKjQKNJdN88AAAAC/menhera-chan-what.gif"
+                }
+            }
         }
-        btn.disabled = isBuy ? App.state.myAnim.some(car => car.id === cars.id) : false
 
         el.appendChild(img)
         el.appendChild(header)
@@ -442,7 +608,7 @@ const App = {
         els.sakurax.innerHTML = "Sakura Petal"
         App.helpers.style(els.sakurax, {
             backgroundImage: "url(https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/35950/cherry-blossoms-branch-clipart-xl.png",
-            backgroundSize: "10vw",
+            backgroundSize: "150px",
             backgroundPosition: "50% 45%",
             backgroundRepeat: "no-repeat",
         })
@@ -477,29 +643,9 @@ const App = {
         })
         els.users.favan.src = "https://cdn-icons-png.flaticon.com/512/1531/1531041.png"
 
-        App.helpers.style(els.isl, {
-            border: "0px solid red",
-            display: "flex",
-            justifyContent: "center",
-            color: "#f78589",
-            fontFamily: "sans-serif",
-            fontSize: "15px",
-            fontWeight: "bold",
-            paddingBottom: "10px",
-            paddingRight: "30px",
-            paddingTop: "10px",
-        })
-        els.isl.innerHTML = "My anime schedule"
-        App.helpers.style(els.isl, {
-            backgroundImage: "url(https://i.pinimg.com/originals/b5/90/e9/b590e99ca1d53d99a21c1cd01e987583.png",
-            backgroundSize: "30px",
-            backgroundPosition: "100% 0%",
-            backgroundRepeat: "no-repeat",
-        })
 
         els.el.appendChild(els.sakurax)
         els.users.el.appendChild(els.users.user)
-        els.el.appendChild(els.isl)
         els.users.el.appendChild(els.users.favan)
         els.el.appendChild(els.users.el)
         App.elements.app.appendChild(els.el)
@@ -598,6 +744,38 @@ const App = {
                     el: document.createElement("div"),
                     btn: document.createElement("div"),
                 },
+            },
+        },
+
+        conta: {
+            backdrop2: document.createElement("div"),
+            container2: {
+                el: document.createElement("div"),
+                title: document.createElement("div"),
+                header2: document.createElement("div"),
+            },
+        },
+        alerta: {
+            backdrop3: document.createElement("div"),
+            container3: {
+                el: document.createElement("div"),
+                title2: document.createElement("div"),
+                title3: document.createElement("div"),
+                btn4: document.createElement("button"),
+                cad: document.createElement("div"),
+                close2: {
+                    el: document.createElement("div"),
+                    btn5: document.createElement("div"),
+                },
+            },
+        },
+
+        alerta2: {
+            backdrop4: document.createElement("div"),
+            container4: {
+                el: document.createElement("div"),
+                title: document.createElement("div"),
+                gif: document.createElement("img"),
             },
         },
 

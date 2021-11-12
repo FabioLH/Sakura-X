@@ -80,8 +80,6 @@ body {
   align-content: center;
   align-items: center;
   justify-content: center;
-
-
   grid-template-areas:
     "anime-card-l1 anime-card-v1"
     "anime-card-l2 anime-card-v2"
@@ -302,6 +300,7 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
+  display: flex;
 }
 
 /* Next & previous buttons */
@@ -347,4 +346,36 @@ body {
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
+}
+
+.el-alerta-el {
+  width: 300px;
+  height: 200px;
+  background: white;
+  position: absolute;
+  border-radius: 10px;
+  padding-bottom: 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  box-shadow: 0px 0px 3px 0px #dddddd;
+}
+
+.entrar-conta {
+  color: black;
+  background-color: #4E9DCA;
+  font-size: 15px;
+  font-family: sans-serif;
+  border: none;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 8px;
+  width: 80px;
+  justify-content: center;
+  display: flex;
 }
