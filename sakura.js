@@ -4,7 +4,6 @@ const App = {
         this.controllers.modalSite()
         this.controllers.modalUser()
         this.controllers.modalAlert()
-        this.controllers.jaAdd()
         this.controllers.headerSite()
         this.controllers.bodySite()
         this.controllers.renderAllAnimeCards()
@@ -14,81 +13,82 @@ const App = {
     },
 
     state: {
+        storageKey: "Sakura-X",
 
         animelist: [
             {id: 1, season: "S1", nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Ação", 
             episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "Segunda-feira",
-            img: "https://animeshouse.net/wp-content/uploads/2021/10/32434.jpg",
+            img: "https://animeanime.global/wp-content/uploads/2021/09/431140.jpg",
             vid: "https://www.youtube-nocookie.com/embed/0lNjes4la9U"},
             
             {id: 2, season: "S1", nomejp: "Mieruko-chan", nomeing: "Mieruko-chan", disponibilidade: "Funimation", genero: "Comédia, Horror",
             episodios: "12", temporada: "Outubro 2021", link: "https://www.funimation.com/shows/mieruko-chan/?qid=", epnovo: "segunda",
-            img: "https://fictionhorizon.com/wp-content/uploads/2021/09/Mieruko-chan-Anime-Cover.jpg",
+            img: "https://static.zerochan.net/Mieruko-chan.600.3391309.jpg",
             vid: "https://www.youtube-nocookie.com/embed/GfR0u_71jRA"},
 
             {id: 3, season: "S1", nomejp: "Hepburn: Eiti Shikkusuy", nomeing: "86 EIGHTY-SIX", disponibilidade: "Crunchyroll", genero: "Drama",
             episodios: "23", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/pt-br/86-eighty-six", epnovo: "segunda",
-            img: "https://metagalaxia.com.br/wp-content/uploads/2021/06/86-eighty-six-resenha-anime-02.jpg",
+            img: "https://kbimages1-a.akamaihd.net/81525c89-29ca-41f6-a1a4-88289079b200/353/569/90/False/86-eighty-six-vol-5-light-novel.jpg",
             vid: "https://www.youtube-nocookie.com/embed/fQoxKVLkrEY"},
 
             {id: 4, season: "S1", nomejp: "Guranburu", nomeing: "Grand Blue Dreaming", disponibilidade: "Amazon Prime", genero: "Comédia",
             episodios: "12", temporada: "Outubro 2021", link: "https://www.primevideo.com/detail/0R9VJMVT7G1I5K03IUINLFHRBO/ref=atv_hm_hom_1_c_7d0kid_2_1", epnovo: "Finalizado",
-            img: "https://wallpapercave.com/wp/wp4507902.jpg",
+            img: "https://animefire.net/img/animes/grand-blue-large.webp?v=1",
             vid: "https://www.youtube-nocookie.com/embed/7ygvyKSnmkI"},
             
             {id: 5, season: "S1", nomejp: "Saihate no Paladin", nomeing: "The Faraway Paladin", disponibilidade: "Crunchyroll", genero: "Aventura, Fantasia", 
             episodios: "Unknown", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/the-faraway-paladin", epnovo: "segunda",
-            img: "https://noobz.com.br/wp-content/uploads/2021/08/The-Faraway-Paladin.jpg",
+            img: "https://m.media-amazon.com/images/M/MV5BYjAwMTU3YTEtNTQ1NS00MzY5LTlmYzItNmI5OTRiZDIxZTdlXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg",
             vid: "https://www.youtube-nocookie.com/embed/OfEv9N-E0wE"},
 
             {id: 6, season: "S1", nomejp: "Maburavu orutaneitivu", nomeing: "Muv-Luv Alternative", disponibilidade: "Crunchyroll", genero: "Mecha, Militar", 
             episodios: "12", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/muv-luv-alternative", epnovo: "segunda",
-            img: "https://img.youtube.com/vi/g6gATcNgk9s/maxresdefault.jpg",
+            img: "https://cdn.myanimelist.net/images/anime/1916/118439.jpg",
             vid: "https://www.youtube-nocookie.com/embed/ftuD73sXiHU"},
 
             {id: 7, season: "S1", nomejp: "Sekai Saikō no Ansatsusha", nomeing: "The World's Best Assassin", disponibilidade: "Crunchyroll", genero: "Ação", 
             episodios: "12", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/pt-br/the-worlds-finest-assassin-gets-reincarnated-in-another-world-as-an-aristocrat", epnovo: "segunda",
-            img: "https://www.animesxis.com.br/wp-content/uploads/2021/02/The-Worlds-Finest-Assassin-Gets-Reincarnated-in-a-Different-World-as-an-Aristocrat-novel-2.jpg",
+            img: "https://blogs.opovo.com.br/tomodachinerds/wp-content/uploads/sites/102/2021/02/ansatsukizoku01.jpg",
             vid: "https://www.youtube-nocookie.com/embed/0PzC2F-tiME"},
 
             {id: 8, season: "S1", nomejp: "Kobayashi-san Chi no Maid Dragon", nomeing: "Miss Kobayashi's Dragon Maid", disponibilidade: "Crunchyroll", genero: "Romance, Comédia, Fantasia", 
             episodios: "25", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/pt-br/miss-kobayashis-dragon-maid", epnovo: "segunda",
-            img: "https://criticalhits.com.br/wp-content/uploads/2021/07/AN_Miss-Kobayashis-Dragon-Maid.jpg",
+            img: "https://cdn.myanimelist.net/images/anime/5/85434.jpg",
             vid: "https://www.youtube-nocookie.com/embed/YVAnyHveq6E"},
 
             {id: 9, season: "S1", nomejp: "Shinka no Mi", nomeing: "The Fruit of Evolution", disponibilidade: "Crunchyroll", genero: "Fantasia, Romance", 
             episodios: "12", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/pt-br/the-fruit-of-evolution-before-i-knew-it-my-life-had-it-made", epnovo: "segunda",
-            img: "https://animemanganews.com/wp-content/uploads/2021/10/the-fruit-of-evolution-before-i-knew-it-my-life-had-it-made-episode-1-release-date-61559b1e0e1ed-1633000222-e1633193366419.jpg",
+            img: "https://animesbr.biz/wp-content/uploads/2021/10/jiJZan11JtZcR76bihEtwjsLOBM.jpg",
             vid: "https://www.youtube-nocookie.com/embed/P441kTYtx1Q"},
 
             {id: 10, season: "S1", nomejp: "Bokutachi no Rimeiku", nomeing: "Remake Our Life!", disponibilidade: "Crunchyroll", genero: "Drama, Romance", 
             episodios: "12", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/pt-br/remake-our-life", epnovo: "Finalizado",
-            img: "https://www.animeunited.com.br/oomtumtu/2021/07/4mZoVBp6ePNZMkmPSJK6vPKejwZ.jpg",
+            img: "https://m.media-amazon.com/images/M/MV5BNjJmNDU0MzUtOWY3ZS00MDQ5LTg3OTQtODRiYWNmNzkxZTNiXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg",
             vid: "https://www.youtube-nocookie.com/embed/T1kzGVmqdmY"},
 
             {id: 11, season: "S1", nomejp: "Tōkyō Ribenjāzu", nomeing: "Tokyo Revengers", disponibilidade: "Crunchyroll", genero: "Drama, Ação", 
             episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/pt-br/tokyo-revengers", epnovo: "Finalizado",
-            img: "https://wallpapercave.com/wp/wp9016814.jpg",
+            img: "https://cdn.aprendejaponeshoy.com/19815/tokyo-revengers-tv-anime-official-guide-book.jpg",
             vid: "https://www.youtube-nocookie.com/embed/ZUzQQAZZqO4"},
 
             {id: 12, season: "S5", nomejp: "Boku no Hīrō Akademia", nomeing: "My Hero Academia", disponibilidade: "Crunchyroll", genero: "Ação", 
             episodios: "25", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "Finalizado",
-            img: "https://kakuchopurei.com/wp-content/uploads/2021/02/My-Hero-Academia-Season-5-1-1.jpg",
+            img: "https://cdn.myanimelist.net/images/anime/1911/113611.jpg",
             vid: "https://www.youtube-nocookie.com/embed/zkGSYFke1oE"},
 
             {id: 13, season: "S1", nomejp: "Tonikaku Kawaii", nomeing: "TONIKAWA: Over The Moon For You", disponibilidade: "Crunchyroll", genero: "Romance, Comédia", 
             episodios: "13", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/pt-br/tonikawa-over-the-moon-for-you", epnovo: "Finalizado",
-            img: "https://geekverso.com/wp-content/uploads/2020/08/TONIKAWA-Over-The-Moon-For-You.png",
+            img: "https://m.media-amazon.com/images/M/MV5BZmI0OTI1OWQtYzRkNy00NGVlLWFhYzAtNzAzNWRkNjE0ZThiXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg",
             vid: "https://www.youtube-nocookie.com/embed/oEfNqrkatII"},
 
             {id: 14, season: "S1", nomejp: "Ao-chan wa Benkyō ga Dekinai", nomeing: "Ao-chan Can't Study!", disponibilidade: "Crunchyroll", genero: "Finalizado", 
             episodios: "12", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/pt-br/ao-chan-cant-study", epnovo: "Finalizado",
-            img: "https://ostnime.com/wp-content/uploads/2019/08/Midara-na-Ao-chan-wa-Benkyou-ga-Dekinai.png",
+            img: "https://cdn.myanimelist.net/images/anime/1718/98214.jpg",
             vid: "https://www.youtube-nocookie.com/embed/qN17SimWp0U"},
 
             {id: 15, season: "Movie", nomejp: "BLACKFOX", nomeing: "BLACKFOX", disponibilidade: "Crunchyroll", genero: "Ação, Drama", 
             episodios: "1", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/pt-br/blackfox", epnovo: "Finalizado",
-            img: "https://i.ytimg.com/vi/OeZn_Yyd_g8/maxresdefault.jpg",
+            img: "https://m.media-amazon.com/images/M/MV5BZTc3Y2ZhYTAtMjRlZS00YTY2LWIyOWMtMmYxYjUyNzA3NzVlXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg",
             vid: "https://www.youtube-nocookie.com/embed/6Q1cIHo7SdQ"},
 
             {id: 16, season: "", nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Finalizado", 
@@ -133,6 +133,35 @@ const App = {
         App.elements.modal.backdrop.style.display = "flex"
         App.elements.modal.container.body.innerHTML = ""
         App.elements.modal.container.body.appendChild(body)
+    },
+
+    favFlow(anime){
+        App.state.myAnim.push(anime) 
+                
+        const arr = App.state.animelist.filter((ani) => {
+            return ani.id !== animelist.id
+        })
+        App.state.animelist = arr
+
+        App.controllers.renderAllMyAnim()
+        App.controllers.hideModal()
+        App.controllers.setLocalData()
+    },
+
+    desfavFlow(anime){
+        App.state.animelist.push(anime) 
+        const arr = App.state.myAnim.filter((ani) => {
+            return ani.id !== animelist.id
+        })
+        App.state.myAnim = arr
+
+        App.controllers.renderAllMyAnim()
+        App.controllers.hideModal()
+        App.controllers.setLocalData()
+    },
+
+    setLocalData(){
+        localStorage.setItem(App.state.storageKey, JSON.stringify(App.state));
     },
 
     modalUser(){
@@ -251,39 +280,6 @@ const App = {
         el.container3.el.appendChild(el.container3.cad)
         el.backdrop3.appendChild(el.container3.el)
         App.elements.app.appendChild(el.backdrop3)
-    },
-
-    jaAdd(){
-        const el = App.elements.alerta2
-
-        App.helpers.style(el.backdrop4, {position: "absolute", left: 0, top: 0, width: "100%", height: "100%",
-        background: "rgba(0, 0, 0, 0.5)", display: "none", justifyContent: "center", alignContent: "center", 
-        overflow: "auto", alignItems: "center"})
-
-        el.container4.el.classList.add("el-alerta-el")
-
-        App.helpers.style(el.container4.title, {textFamily: "sans-serif", textAlign: "center", fontSize: "20px",
-        color: "#4E9DCA", fontWeight: "bold", position: "relative"})
-        el.container4.title.innerHTML = "Esse anime já foi adicionado na sua agenda"
-
-        App.helpers.style(el.container4.gif, {
-            width: "60%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
-        })
-
-
-        el.backdrop4.onclick = (evt) => {
-            if (evt.target === el.backdrop4) {
-                el.backdrop4.style.display = "none"
-            }
-        }
-
-        el.container4.el.appendChild(el.container4.title)
-        el.container4.el.appendChild(el.container4.gif)
-        el.backdrop4.appendChild(el.container4.el)
-        App.elements.app.appendChild(el.backdrop4)
     },
      
     hideModal() {
@@ -406,21 +402,21 @@ const App = {
         v5.classList.add("anime-card-v5")
 
 
-        container.appendChild(l1)
-        container.appendChild(v1)
-        container.appendChild(l2)
-        container.appendChild(v2)
-        container.appendChild(l3)
-        container.appendChild(v3)
-        container.appendChild(l4)
-        container.appendChild(v4)
-        container.appendChild(l5)
-        container.appendChild(v5)
+        //container.appendChild(l1)
+        //container.appendChild(v1)
+        //container.appendChild(l2)
+        //container.appendChild(v2)
+        //container.appendChild(l3)
+        //container.appendChild(v3)
+        //container.appendChild(l4)
+        //container.appendChild(v4)
+        //container.appendChild(l5)
+        //container.appendChild(v5)
 
         return container
     },
 
-    createAnimCards(anime) {
+    createAnimCards(anime, isBuy) {
         const el = document.createElement("div")
         const header = document.createElement("div")
         const img = document.createElement("img")
@@ -429,11 +425,18 @@ const App = {
         
         el.classList.add("anime-card")
         el.onmouseover = function () {
-            el.style.boxShadow = "0px 0px 3px 0px #f78589"
+            el.style.boxShadow = "0px 0px 3px 1px #b56a4c"
+            // fall - #b56a4c
+            // winter - #74b4b4
         }
         el.onmouseout = function () {
             el.style.boxShadow = "0px 0px 5px 2px #c5c5c5"
         }
+        App.helpers.style(el, {
+            backgroundImage: "url(" + anime.img + ")",
+            backgroundSize: "100% 100%",
+            backgroundRepeat: "no-repeat",
+        })
         
         img.classList.add("anime-card-img")
         img.style.width = "0%"
@@ -444,35 +447,35 @@ const App = {
         header.innerHTML = anime.nomeing + " - " + anime.season
 
         btn.classList.add("anime-card-btn")
-        btn.innerHTML = "+Detalhes"
+        btn.innerHTML = isBuy ? "+Detalhes" : "Retirar"
         btn.onclick = () => {
-            const content = App.controllers.createCardsContent(anime)
+            const content = App.controllers.createCardsContent(anime, isBuy)
             App.controllers.showModal(content)
         }
 
-        el.appendChild(img)
-        el.appendChild(header)
-        el.appendChild(stats)
+        //el.appendChild(img)
+        //el.appendChild(header)
+        //el.appendChild(stats)
         el.appendChild(btn)
 
         return el
     },
 
-    createCardsContent(anime) {
+    createCardsContent(anime, isBuy) {
         const el = document.createElement("div")
         const img = document.createElement("iframe")
         const header = document.createElement("div")
         const container = document.createElement("div")
+        const l1 = document.createElement("div")
+        const v1 = document.createElement("div")
+        const l2 = document.createElement("div")
+        const v2 = document.createElement("div")
+        const l3 = document.createElement("div")
+        const v3 = document.createElement("div")
+        const l4 = document.createElement("div")
+        const v4 = document.createElement("div")
         const l5 = document.createElement("div")
         const v5 = document.createElement("div")
-        const l6 = document.createElement("div")
-        const v6 = document.createElement("div")
-        const l7 = document.createElement("div")
-        const v7 = document.createElement("div")
-        const l8 = document.createElement("div")
-        const v8 = document.createElement("div")
-        const l9 = document.createElement("div")
-        const v9 = document.createElement("div")
         const btn = document.createElement("button")
 
         App.helpers.style(el, {
@@ -495,78 +498,66 @@ const App = {
 
         container.classList.add("anime-card-container")
 
-        l5.innerHTML = "Gênero:"
-        v5.innerHTML = anime.genero
-        l5.classList.add("anime-card-l5")
-        v5.classList.add("anime-card-v5")
+        l1.innerHTML = "Gênero:"
+        v1.innerHTML = anime.genero
+        l1.classList.add("anime-card-l1")
+        v1.classList.add("anime-card-v1")
 
-        l6.innerHTML = "Episódios:"
-        v6.innerHTML = anime.episodios
-        l6.classList.add("anime-card-l6")
-        v6.classList.add("anime-card-v6")
+        l2.innerHTML = "Episódios:"
+        v2.innerHTML = anime.episodios
+        l2.classList.add("anime-card-l2")
+        v2.classList.add("anime-card-v2")
 
-        l7.innerHTML = "Ep. novo:"
-        v7.innerHTML = anime.epnovo
-        l7.classList.add("anime-card-l7")
-        v7.classList.add("anime-card-v7")
+        l3.innerHTML = "Ep. novo:"
+        v3.innerHTML = anime.epnovo
+        l3.classList.add("anime-card-l3")
+        v3.classList.add("anime-card-v3")
 
-        l8.innerHTML = "Link:"
-        v8.innerHTML = "Assista aqui"
-        v8.style.color = "#f78589"
-        v8.style.textDecoration = "underline"
-        v8.style.cursor = "pointer"
-        v8.onclick = () => {
+        l4.innerHTML = "Link:"
+        v4.innerHTML = "Assista aqui"
+        v4.style.color = "#f78589"
+        v4.style.textDecoration = "underline"
+        v4.style.cursor = "pointer"
+        v4.onclick = () => {
             window.open(anime.link)
         }
-        l8.classList.add("anime-card-l8")
-        v8.classList.add("anime-card-v8")
+        l4.classList.add("anime-card-l4")
+        v4.classList.add("anime-card-v4")
 
         btn.classList.add("anime-card-btn")
-        btn.innerHTML = "Add na minha agenda"
+        btn.innerHTML = isBuy ? "Favoritar" : "Desfavoritar"
         btn.style.marginTop = "5px"
-        let ListaAnime = JSON.parse(localStorage.getItem("ListaAnime") || "[]")
         btn.onclick = () => {
             if (localStorage.getItem("token") === null) {
                 App.controllers.hideModal()
                 App.elements.alerta.backdrop3.style.display = "flex"
-                App.elements.alerta.container3.title3.innerHTML = "Entre na Sakura Petal para adicionar animes na sua agenda"
-            } else if (ListaAnime.length === 0) {
-                ListaAnime.push(anime)
-                localStorage.setItem("ListaAnime", JSON.stringify(ListaAnime))
+                App.elements.alerta.container3.title3.innerHTML = "Entre no Projeto X para adicionar anúncios aos seus favoritos."
+            } else if (isBuy) {
+                App.controllers.favFlow(cars)
             } else {
-                let existe = false
-                for (let i = 0; i < ListaAnime.length; i++) {
-                    if (ListaAnime[i].nomeing === anime.nomeing) {
-                        existe = true
-                    }
-                }
-                if (existe === false) {
-                    ListaAnime.push(anime)
-                    localStorage.setItem("ListaAnime", JSON.stringify(ListaAnime))
-                    App.elements.alerta2.backdrop4.style.display = "flex"
-                    App.elements.alerta2.container4.title.innerHTML = "Anime adicionado com sucesso!"
-                    App.elements.alerta2.container4.gif.src = "https://c.tenor.com/9Iru6GJCKtMAAAAC/anime-okay.gif"
-                } else {
-                    App.elements.alerta2.backdrop4.style.display = "flex"
-                    App.elements.alerta2.container4.title.innerHTML = "Anime já adicionado!"
-                    App.elements.alerta2.container4.gif.src = "https://c.tenor.com/WKjQKNJdN88AAAAC/menhera-chan-what.gif"
-                }
-            }
+                App.controllers.desfavFlow(cars)
+            } 
         }
+        btn.disabled = isBuy ? App.state.myAnim.some(ani => ani.id === animelist.id) : false
+
+        l5.classList.add("anime-card-l5")
+        l5.innerHTML = "Estúdio:"
+        v5.innerHTML = "Qualquer um"
+        v5.classList.add("anime-card-v5")
 
         el.appendChild(img)
         el.appendChild(header)
         el.appendChild(container)
+        container.appendChild(l1)
+        container.appendChild(v1)
+        container.appendChild(l2)
+        container.appendChild(v2)
+        container.appendChild(l3)
+        container.appendChild(v3)
+        container.appendChild(l4)
+        container.appendChild(v4)
         container.appendChild(l5)
         container.appendChild(v5)
-        container.appendChild(l6)
-        container.appendChild(v6)
-        container.appendChild(l7)
-        container.appendChild(v7)
-        container.appendChild(l8)
-        container.appendChild(v8)
-        container.appendChild(l9)
-        container.appendChild(v9)
         el.appendChild(btn)
         return el
     },
@@ -600,9 +591,7 @@ const App = {
     headerSite() {
         const els = App.elements.header
 
-        App.helpers.style(els.el, {backgroundColor: "#e4eeed", padding: '0px', border: "0px solid red", display: "flex",
-        justifyContent: "space-between", alignItems: "center", top: 0, left: 0, width: "100vw", borderBottom: "1px solid #ccc",
-        flexDirection: "row", })
+        els.el.classList.add("header-site")
 
         els.sakurax.classList.add('sakurax')
         els.sakurax.innerHTML = "Sakura Petal"
@@ -643,8 +632,19 @@ const App = {
         })
         els.users.favan.src = "https://cdn-icons-png.flaticon.com/512/1531/1531041.png"
 
+        els.isl.classList.add('temporada')
+        els.isl.innerHTML = "Temporada de Outono"
+        App.helpers.style(els.isl, {
+            backgroundImage: "url(https://i.pinimg.com/originals/90/2c/2b/902c2bbccb72ca76cf3bbe95741174e9.png",
+            backgroundSize: "50px",
+            backgroundPosition: "100% 50%",
+            backgroundRepeat: "no-repeat",
+            // winter - https://www.seekpng.com/png/full/340-3403336_post-logo-de-frio-png.png
+        })
+
 
         els.el.appendChild(els.sakurax)
+        els.el.appendChild(els.isl)
         els.users.el.appendChild(els.users.user)
         els.users.el.appendChild(els.users.favan)
         els.el.appendChild(els.users.el)
@@ -655,7 +655,7 @@ const App = {
         const els = App.elements.body
         const Div3 = {border: "px solid red", display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center", 
         alignItems: "center", alignContent: "center", fontFamily: "sans-serif", fontSize: "15px", padding: "0px", 
-        margin: "0px", backgroundColor: "#fef8f9",};
+        margin: "0px", backgroundColor: "#FFB7C5",};
 
         App.helpers.style(els.el, {border: "0px solid black" ,flexGrow: "1", margin: "0px", display: "flex",
         alignItems:  "flex-start", flexDirection: "row", overflowX: "hidden", overflowY: "auto",})
