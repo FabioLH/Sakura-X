@@ -5,7 +5,9 @@ const App = {
         this.controllers.modalUser()
         this.controllers.modalAlert()
         this.controllers.headerSite()
+        this.controllers.searchDiv()
         this.controllers.bodySite()
+        this.controllers.contaUser()
         this.controllers.renderAllAnimeCards()
         this.controllers.renderAllMyAnim()
         this.controllers.footerSite()
@@ -133,6 +135,113 @@ const App = {
         App.elements.modal.backdrop.style.display = "flex"
         App.elements.modal.container.body.innerHTML = ""
         App.elements.modal.container.body.appendChild(body)
+    },
+
+    contaUser(){
+        const els = App.elements.contaUser
+        const entrar = els.container2.btn2
+
+        App.helpers.style(els.backdrop2, {position: "relative", width: "100%", height: "100%",
+        background: "rgba(0, 0, 0, 0.1)", display: "none", justifyContent: "space-between", alignItems: "center",
+        alignContent: "center", overflow: "auto", flexDirection: "column", textAlign: "center", overflowX: "hidden",});
+
+        els.container2.el.classList.add("el-container2-el")
+
+        App.helpers.style(els.container2.header2, {textFamily: "sans-serif", textAlign: "center", fontSize: "16px",
+        marginBottom: "5%", marginTop: "5%",})
+        els.container2.header2.innerHTML = "Para ver e gerenciar as informações da sua conta, informe os dados abaixo"
+
+        App.helpers.style(els.container2.usuario, {border: "none" , borderBottom: "2px solid #595a5a", outline: "none",
+        width: "197px"})
+        els.container2.usuario.placeholder = "Usuário"
+        els.container2.usuario.focus()
+
+        App.helpers.style(els.container2.senha, {border: "none" , borderBottom: "2px solid #595a5a", outline: "none",
+        paddingRight: "20px", width: "179px",})
+        els.container2.senha.placeholder = "Senha"
+        var senha = els.container2.senha
+        senha.setAttribute("type", "password")
+
+        els.container2.forpass.classList.add("forgot-password")
+        els.container2.forpass.innerHTML = "Esqueceu sua senha?"
+        els.container2.forpass.onclick = function(){
+            window.location.href = ""
+        }
+
+        els.container2.errolog.classList.add("erro-log")
+        els.container2.errolog.innerHTML = "Usuário ou senha incorretos"
+        els.container2.btn2.classList.add("account-btn2")
+        els.container2.btn2.innerHTML = "Entrar"
+        entrar.addEventListener("click", function(){
+            let usuario = els.container2.usuario
+            let senha = els.container2.senha
+            let ListaUser = []
+            let userValid = {
+                nome: "",
+                user: "",
+                senha: ""
+            }
+            ListaUser = JSON.parse(localStorage.getItem("ListaUser"))
+            ListaUser.forEach((item) => {
+                if (usuario.value == item.usuarioCad && senha.value == item.senhaCad) {
+                    userValid = {
+                        nome: item.nomeCad,
+                        user: item.usuarioCad,
+                        senha: item.senhaCad
+                    }
+                }
+            })
+            if (usuario.value === userValid.user && senha.value === userValid.senha) {
+                window.location.href = ""
+                let token = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
+                localStorage.setItem("token", token)
+
+                localStorage.setItem("userLogado", JSON.stringify(userValid))
+            } else {
+                els.container2.errolog.style.display = "block"
+                usuario.focus()
+                setTimeout(() => {
+                    els.container2.errolog.style.display = "none"
+                }, 2000)
+            }
+        })
+
+
+        App.helpers.style(els.container2.newacc, {textFamily: "sans-serif", textAlign: "center", fontSize: "13px",
+        fontWeight: "bold", cursor: "pointer"})
+        els.container2.newacc.innerHTML = "Não tem uma conta? <span class='criar-conta'>Crie uma agora!</span>"
+        els.container2.newacc.onclick = () => {
+            window.location.href = ""
+        }
+
+        els.container2.verpass.classList.add("ver-password")
+        els.container2.verpass.src = "https://img.icons8.com/color/48/000000/invisible.png"
+        els.container2.verpass.onclick = () => {
+            if (senha.type === "password") {
+                senha.type = "text"
+                els.container2.verpass.src = "https://img.icons8.com/color/48/000000/visible.png"
+            } else {
+                senha.type = "password"
+                els.container2.verpass.src = "https://img.icons8.com/color/48/000000/invisible.png"
+            }
+        }
+
+        App.helpers.style(els.footer, {backgroundColor: "#595a5a", width: "100%", height: "60px", display: "none", 
+        justifyContent: "center", alignItems: "center", alignContent: "center", overflow: "auto", flexDirection: "column",
+        textAlign: "center", margin: "0px", padding: "0px", fontSize: "13px", color: "white",})
+        els.footer.innerHTML = "© 2021 Projeto X. Todos os direitos reservados"
+
+        els.container2.el.appendChild(els.container2.header2)
+        els.container2.el.appendChild(els.container2.errolog)
+        els.container2.el.appendChild(els.container2.usuario)
+        els.container2.el.appendChild(els.container2.senha)
+        els.container2.el.appendChild(els.container2.verpass)
+        els.container2.el.appendChild(els.container2.forpass)
+        els.container2.el.appendChild(els.container2.btn2)
+        els.container2.el.appendChild(els.container2.newacc)
+        els.backdrop2.appendChild(els.container2.el)
+        App.elements.app.appendChild(els.backdrop2)
+        App.elements.app.appendChild(els.footer)
     },
 
     favFlow(anime){
@@ -300,7 +409,8 @@ const App = {
             justifyContent: "center",
             alignItems: "center",
             alignContent: "center",
-            overflow: "auto"
+            overflow: "auto",
+            zIndex: "1"
         })
 
         App.helpers.style(el.container.el, {
@@ -308,6 +418,7 @@ const App = {
             background: "white",
             borderRadius: "10px",
             paddingBottom: "5px",
+            zIndex: "1"
         })
 
         App.helpers.style(el.container.close.el, {
@@ -437,6 +548,10 @@ const App = {
             backgroundSize: "100% 100%",
             backgroundRepeat: "no-repeat",
         })
+        el.onclick = () => {
+            const content = App.controllers.createCardsContent(anime, isBuy)
+            App.controllers.showModal(content)
+        }
         
         img.classList.add("anime-card-img")
         img.style.width = "0%"
@@ -446,17 +561,17 @@ const App = {
         header.classList.add("anime-card-header")
         header.innerHTML = anime.nomeing + " - " + anime.season
 
-        btn.classList.add("anime-card-btn")
-        btn.innerHTML = isBuy ? "+Detalhes" : "Retirar"
-        btn.onclick = () => {
-            const content = App.controllers.createCardsContent(anime, isBuy)
-            App.controllers.showModal(content)
-        }
+       // btn.classList.add("anime-card-btn")
+       // btn.innerHTML = isBuy ? "+" : "Retirar"
+        //btn.onclick = () => {
+        //    const content = App.controllers.createCardsContent(anime, isBuy)
+        //    App.controllers.showModal(content)
+       // }
 
         //el.appendChild(img)
         //el.appendChild(header)
         //el.appendChild(stats)
-        el.appendChild(btn)
+        //el.appendChild(btn)
 
         return el
     },
@@ -531,7 +646,7 @@ const App = {
             if (localStorage.getItem("token") === null) {
                 App.controllers.hideModal()
                 App.elements.alerta.backdrop3.style.display = "flex"
-                App.elements.alerta.container3.title3.innerHTML = "Entre no Projeto X para adicionar anúncios aos seus favoritos."
+                App.elements.alerta.container3.title3.innerHTML = "Entre no Sakura Petal para adicionar animes na sua lista."
             } else if (isBuy) {
                 App.controllers.favFlow(cars)
             } else {
@@ -601,6 +716,13 @@ const App = {
             backgroundPosition: "50% 45%",
             backgroundRepeat: "no-repeat",
         })
+        els.sakurax.onclick = () => {
+            App.elements.contaUser.backdrop2.style.display = "none"
+            App.elements.body.el.style.display = "flex"
+            App.elements.contaUser.footer.style.display = "none"
+            els.isl.style.display = "flex"
+        }
+
 
         App.helpers.style(els.users.el, {
             display: "flex",
@@ -620,6 +742,12 @@ const App = {
             width: "30px",
         })
         els.users.user.src = "https://cdn.iconscout.com/icon/free/png-256/account-269-866236.png"
+        els.users.user.onclick = () => {
+            App.elements.contaUser.backdrop2.style.display = "flex"
+            App.elements.body.el.style.display = "none"
+            App.elements.contaUser.footer.style.display = "flex"
+            els.isl.style.display = "none"
+        }
 
         App.helpers.style(els.users.favan, {
             border: "0px solid red",
@@ -632,22 +760,61 @@ const App = {
         })
         els.users.favan.src = "https://cdn-icons-png.flaticon.com/512/1531/1531041.png"
 
-        els.isl.classList.add('temporada')
-        els.isl.innerHTML = "Temporada de Outono"
-        App.helpers.style(els.isl, {
-            backgroundImage: "url(https://i.pinimg.com/originals/90/2c/2b/902c2bbccb72ca76cf3bbe95741174e9.png",
-            backgroundSize: "50px",
-            backgroundPosition: "100% 50%",
-            backgroundRepeat: "no-repeat",
+            // fall - https://i.pinimg.com/originals/90/2c/2b/902c2bbccb72ca76cf3bbe95741174e9.png
             // winter - https://www.seekpng.com/png/full/340-3403336_post-logo-de-frio-png.png
-        })
 
+
+        els.users.searchicon.classList.add("search-icon")
+        els.users.searchicon.src = "https://www.pinclipart.com/picdir/big/149-1490404_clipart-computer-magnifying-glass-anime-magnifying-glass-png.png"
+        els.users.searchicon.onclick = () => {
+            if (App.elements.body.searchdiv.el.style.display === "none") {
+                App.elements.body.searchdiv.el.style.display = "flex"
+            } else {
+                App.elements.body.searchdiv.el.style.display = "none"
+            }
+        }
 
         els.el.appendChild(els.sakurax)
-        els.el.appendChild(els.isl)
+        els.users.el.appendChild(els.users.searchicon)
         els.users.el.appendChild(els.users.user)
         els.users.el.appendChild(els.users.favan)
         els.el.appendChild(els.users.el)
+        App.elements.app.appendChild(els.el)
+    },
+
+    searchDiv() {
+        const els = App.elements.body.searchdiv
+        const Searchbar = {outline: "none", fontSize: "14px",position: "sticky", display: "flex", border: "1px solid #ece8e8", height: "5vh",
+        backgroundColor: "white", width: "400px", paddingLeft: "2vw", marginBottom: "2vh", marginTop: "2vh"}
+
+        App.helpers.style(els.el, {
+        display: "none", flexDirection: "row", flexWrap: "wrap", justifyContent: "center", alignItems: "center", alignContent: "center", 
+        fontFamily: "sans-serif", fontSize: "15px", padding: "0px", margin: "0px", backgroundColor: "white",
+        transition: "transform .9s ease-in-out",})
+
+        els.el.style.border = "0px solid #4E9DCA"
+        
+        els.search.classList.add("search-bar")
+        els.search.placeholder = "Digite o nome da obra"
+
+        App.helpers.style(els.search, {
+            backgroundImage: "url(https://img.flaticon.com/icons/png/512/61/61088.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF)",
+            backgroundSize: "2vw",
+            backgroundPosition: "1% 45%",
+            backgroundRepeat: "no-repeat",
+        })
+        const search = els.search
+        const carslist = App.state.animelist
+        search.addEventListener("keyup", (e) => {
+            const searchString = e.target.value.toLowerCase();
+            const filterCars = carslist.filter(ani => {
+                return ani.nomeing.toLowerCase().includes(searchString) || ani.nomejp.toLowerCase().includes(searchString) 
+            });
+            App.state.animelist = filterCars
+            App.controllers.renderAllAnimeCards()
+        })
+
+        els.el.appendChild(els.search)
         App.elements.app.appendChild(els.el)
     },
 
@@ -655,10 +822,10 @@ const App = {
         const els = App.elements.body
         const Div3 = {border: "px solid red", display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center", 
         alignItems: "center", alignContent: "center", fontFamily: "sans-serif", fontSize: "15px", padding: "0px", 
-        margin: "0px", backgroundColor: "#FFB7C5",};
+        margin: "0px", overflow: "auto"};
 
         App.helpers.style(els.el, {border: "0px solid black" ,flexGrow: "1", margin: "0px", display: "flex",
-        alignItems:  "flex-start", flexDirection: "row", overflowX: "hidden", overflowY: "auto",})
+        alignItems:  "flex-start", flexDirection: "row", overflowX: "hidden", overflowY: "auto", backgroundColor: "#FFB7C5",})
 
 
 
@@ -717,6 +884,7 @@ const App = {
                 el: document.createElement("div"),
                 user: document.createElement("img"),
                 favan: document.createElement("img"),
+                searchicon: document.createElement("img"),
             },
             isl: document.createElement("div"),
         },
@@ -745,6 +913,23 @@ const App = {
                     btn: document.createElement("div"),
                 },
             },
+        },
+
+        contaUser: {
+            backdrop2: document.createElement("div"),
+            header: document.createElement("div"),
+            container2: {
+                el: document.createElement("div"),
+                header2: document.createElement("div"),
+                usuario: document.createElement("input"),
+                senha: document.createElement("input"),
+                btn2: document.createElement("button"),
+                forpass: document.createElement("div"),
+                newacc: document.createElement("div"),
+                verpass: document.createElement("img"),
+                errolog: document.createElement("div"),
+            },
+            footer: document.createElement("div"),
         },
 
         conta: {

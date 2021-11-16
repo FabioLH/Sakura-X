@@ -72,6 +72,7 @@ body {
   font-size: 13px;
   font-family: sans-serif;
   border: none;
+  font-weight: bold;
 }
 
 .anime-card-container {
@@ -217,11 +218,27 @@ body {
   box-shadow: 0px 0px 3px 0px #dddddd;
 }
 
+.erro-log {
+  font-size: 12px;
+  display: none;
+  width: 250px;
+  color: #ff0000;
+  position: absolute;
+  font-weight: bold;
+  font-family: sans-serif;
+  justify-content: center;
+  text-align: center;
+  padding: 2px;
+  border-radius: 4px;
+  background-color: #ebb3b3;
+  top: 85px;
+}
+
 .ver-password {
   width: 20px;
   position: absolute;
   right: 75px;
-  top: 178px;
+  top: 175px;
   cursor: pointer;
 }
 
@@ -251,8 +268,11 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
+  padding-bottom: 15px;
+  padding-top: 15px;
   display: flex;
   text-align: center;
+  cursor: pointer;
 }
 
 .temporada {
@@ -260,11 +280,10 @@ body {
   border: 0px solid red;
   display: flex;
   font-family: sans-serif;
-  font-size: 24px;
+  font-size: 22px;
   color: #b56a4c;
   padding-bottom: 15px;
   padding-top: 15px;
-  padding-left: 30px;
   padding-right: 50px;
   text-align: center;
 }
@@ -281,6 +300,32 @@ body {
   width: 100vw;
   border-bottom: 1px solid #ccc;
   flex-direction: row, 
+}
+
+.search-icon {
+  border: 0px solid red;
+  display: flex;
+  width: 30px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.search-bar {
+  outline: none;
+  border-radius: 10px;
+  font-size: 14px;
+  position: sticky;
+  display: flex;
+  border: 1px solid #ece8e8;
+  height: 5vh;
+  background-color: white;
+  width: 400px;
+  padding-left: 2vw;
+  margin-bottom: 2vh;
+  margin-top: 2vh
+}
+.search-bar:hover {
+  box-shadow: 0px 0px 3px 0px #c5c5c5;
 }
 
 /* Next & previous buttons */
@@ -358,4 +403,20 @@ body {
   width: 80px;
   justify-content: center;
   display: flex;
+}
+.el-container2-el {
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  background: white;
+  border-radius: 10px;
+  padding-bottom: 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  box-shadow: 0px 0px 3px 0px #dddddd;
+  top: 13%;
 }
