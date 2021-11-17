@@ -84,15 +84,16 @@ body {
   min-height: 15vh;
   font-family: sans-serif;
   grid-auto-flow: row;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
+  overflow: auto;
   grid-template-areas:
     "anime-card-l1 anime-card-v1"
     "anime-card-l2 anime-card-v2"
     "anime-card-l3 anime-card-v3"
     "anime-card-l4 anime-card-v4"
-    "anime-card-l5 anime-card-v5";
+    "anime-card-l5 anime-card-v5"
+    "anime-card-l6 anime-card-v6"
+    "anime-card-l7 anime-card-v7";
+    border: 1px solid royalblue;
 }
 
 .anime-card-l1 {
@@ -136,6 +137,22 @@ body {
 }
 .anime-card-v5 {
   grid-area: anime-card-v5;
+}
+
+.anime-card-l6 {
+  grid-area: anime-card-l6;
+  border-left: 1px solid #f78589;
+}
+.anime-card-v6 {
+  grid-area: anime-card-v6;
+}
+
+.anime-card-l7 {
+  grid-area: anime-card-l7;
+  border-left: 1px solid #f78589;
+}
+.anime-card-v7 {
+  grid-area: anime-card-v7;
 }
 
 

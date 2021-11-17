@@ -591,6 +591,10 @@ const App = {
         const v4 = document.createElement("div")
         const l5 = document.createElement("div")
         const v5 = document.createElement("div")
+        const l6 = document.createElement("div")
+        const v6 = document.createElement("div")
+        const l7 = document.createElement("div")
+        const v7 = document.createElement("div")
         const btn = document.createElement("button")
 
         App.helpers.style(el, {
@@ -660,6 +664,16 @@ const App = {
         v5.innerHTML = "Qualquer um"
         v5.classList.add("anime-card-v5")
 
+        l6.classList.add("anime-card-l6")
+        l6.innerHTML = "Temporada:"
+        v6.innerHTML = anime.temporada
+        v6.classList.add("anime-card-v6")
+
+        l7.classList.add("anime-card-l7")
+        l7.innerHTML = "Nome JP:"
+        v7.innerHTML = anime.nomejp
+        v7.classList.add("anime-card-v7")
+
         el.appendChild(img)
         el.appendChild(header)
         el.appendChild(container)
@@ -673,6 +687,10 @@ const App = {
         container.appendChild(v4)
         container.appendChild(l5)
         container.appendChild(v5)
+        container.appendChild(l6)
+        container.appendChild(v6)
+        container.appendChild(l7)
+        container.appendChild(v7)
         el.appendChild(btn)
         return el
     },
@@ -760,10 +778,6 @@ const App = {
         })
         els.users.favan.src = "https://cdn-icons-png.flaticon.com/512/1531/1531041.png"
 
-            // fall - https://i.pinimg.com/originals/90/2c/2b/902c2bbccb72ca76cf3bbe95741174e9.png
-            // winter - https://www.seekpng.com/png/full/340-3403336_post-logo-de-frio-png.png
-
-
         els.users.searchicon.classList.add("search-icon")
         els.users.searchicon.src = "https://www.pinclipart.com/picdir/big/149-1490404_clipart-computer-magnifying-glass-anime-magnifying-glass-png.png"
         els.users.searchicon.onclick = () => {
@@ -791,6 +805,13 @@ const App = {
         display: "none", flexDirection: "row", flexWrap: "wrap", justifyContent: "center", alignItems: "center", alignContent: "center", 
         fontFamily: "sans-serif", fontSize: "15px", padding: "0px", margin: "0px", backgroundColor: "white",
         transition: "transform .9s ease-in-out",})
+        App.helpers.style(els.el, {
+            backgroundImage: "url(https://img1.picmix.com/output/stamp/normal/0/9/1/4/644190_e7498.gif)",
+            backgroundSize: "20%",
+            backgroundRepeat: "repeat",
+        })
+        // Fall - https://img1.picmix.com/output/stamp/normal/0/9/1/4/644190_e7498.gif
+        // Primav - https://i.pinimg.com/originals/52/b3/ca/52b3caaa9e283398b6d5b80a11938bed.gif
 
         els.el.style.border = "0px solid #4E9DCA"
         
