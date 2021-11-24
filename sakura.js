@@ -18,27 +18,28 @@ const App = {
         storageKey: "Sakura-X",
 
         animelist: [
-            {id: 1, season: "S1", nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Ação", 
+            {id: 1, season: "S1", nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Ação, Fantasia, Música", 
             episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "Segunda-feira",
             img: "https://animeanime.global/wp-content/uploads/2021/09/431140.jpg",
             vid: "https://www.youtube-nocookie.com/embed/0lNjes4la9U"},
             
-            {id: 2, season: "S1", nomejp: "Mieruko-chan", nomeing: "Mieruko-chan", disponibilidade: "Funimation", genero: "Comédia, Horror",
+            {id: 2, season: "S1", nomejp: "Mieruko-chan", nomeing: "Mieruko-chan", disponibilidade: "Funimation", genero: "Comédia, Horror, Sobrenatural",
             episodios: "12", temporada: "Outubro 2021", link: "https://www.funimation.com/shows/mieruko-chan/?qid=", epnovo: "segunda",
             img: "https://static.zerochan.net/Mieruko-chan.600.3391309.jpg",
-            vid: "https://www.youtube-nocookie.com/embed/GfR0u_71jRA"},
+            vid: "https://www.youtube-nocookie.com/embed/GfR0u_71jRA",
+            sinopse: "Ela pode ver pessoas mortas... mas opta por ignorá-las. Esse é o plano de Miko, entretanto, com resultados horríveis (e, às vezes, hilários)."},
 
-            {id: 3, season: "S1", nomejp: "Hepburn: Eiti Shikkusuy", nomeing: "86 EIGHTY-SIX", disponibilidade: "Crunchyroll", genero: "Drama",
+            {id: 3, season: "S1", nomejp: "Hepburn: Eiti Shikkusuy", nomeing: "86 EIGHTY-SIX", disponibilidade: "Crunchyroll", genero: "Drama, Mecha, Militar, Ação",
             episodios: "23", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/pt-br/86-eighty-six", epnovo: "segunda",
             img: "https://kbimages1-a.akamaihd.net/81525c89-29ca-41f6-a1a4-88289079b200/353/569/90/False/86-eighty-six-vol-5-light-novel.jpg",
             vid: "https://www.youtube-nocookie.com/embed/fQoxKVLkrEY"},
 
-            {id: 4, season: "S1", nomejp: "Guranburu", nomeing: "Grand Blue Dreaming", disponibilidade: "Amazon Prime", genero: "Comédia",
+            {id: 4, season: "S1", nomejp: "Guranburu", nomeing: "Grand Blue Dreaming", disponibilidade: "Amazon Prime", genero: "Comédia, Slice of Life",
             episodios: "12", temporada: "Outubro 2021", link: "https://www.primevideo.com/detail/0R9VJMVT7G1I5K03IUINLFHRBO/ref=atv_hm_hom_1_c_7d0kid_2_1", epnovo: "Finalizado",
             img: "https://animefire.net/img/animes/grand-blue-large.webp?v=1",
             vid: "https://www.youtube-nocookie.com/embed/7ygvyKSnmkI"},
             
-            {id: 5, season: "S1", nomejp: "Saihate no Paladin", nomeing: "The Faraway Paladin", disponibilidade: "Crunchyroll", genero: "Aventura, Fantasia", 
+            {id: 5, season: "S1", nomejp: "Saihate no Paladin", nomeing: "The Faraway Paladin", disponibilidade: "Crunchyroll", genero: "Aventura, Fantasia, Ação", 
             episodios: "Unknown", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/the-faraway-paladin", epnovo: "segunda",
             img: "https://m.media-amazon.com/images/M/MV5BYjAwMTU3YTEtNTQ1NS00MzY5LTlmYzItNmI5OTRiZDIxZTdlXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg",
             vid: "https://www.youtube-nocookie.com/embed/OfEv9N-E0wE"},
@@ -48,7 +49,7 @@ const App = {
             img: "https://cdn.myanimelist.net/images/anime/1916/118439.jpg",
             vid: "https://www.youtube-nocookie.com/embed/ftuD73sXiHU"},
 
-            {id: 7, season: "S1", nomejp: "Sekai Saikō no Ansatsusha", nomeing: "The World's Best Assassin", disponibilidade: "Crunchyroll", genero: "Ação", 
+            {id: 7, season: "S1", nomejp: "Sekai Saikō no Ansatsusha", nomeing: "The World's Best Assassin", disponibilidade: "Crunchyroll", genero: "Ação, Drama, Fantasia, Mistério, Romance", 
             episodios: "12", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/pt-br/the-worlds-finest-assassin-gets-reincarnated-in-another-world-as-an-aristocrat", epnovo: "segunda",
             img: "https://blogs.opovo.com.br/tomodachinerds/wp-content/uploads/sites/102/2021/02/ansatsukizoku01.jpg",
             vid: "https://www.youtube-nocookie.com/embed/0PzC2F-tiME"},
@@ -63,17 +64,17 @@ const App = {
             img: "https://animesbr.biz/wp-content/uploads/2021/10/jiJZan11JtZcR76bihEtwjsLOBM.jpg",
             vid: "https://www.youtube-nocookie.com/embed/P441kTYtx1Q"},
 
-            {id: 10, season: "S1", nomejp: "Bokutachi no Rimeiku", nomeing: "Remake Our Life!", disponibilidade: "Crunchyroll", genero: "Drama, Romance", 
+            {id: 10, season: "S1", nomejp: "Bokutachi no Rimeiku", nomeing: "Remake Our Life!", disponibilidade: "Crunchyroll", genero: "Drama, Romance, Slice of Life", 
             episodios: "12", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/pt-br/remake-our-life", epnovo: "Finalizado",
             img: "https://m.media-amazon.com/images/M/MV5BNjJmNDU0MzUtOWY3ZS00MDQ5LTg3OTQtODRiYWNmNzkxZTNiXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg",
             vid: "https://www.youtube-nocookie.com/embed/T1kzGVmqdmY"},
 
-            {id: 11, season: "S1", nomejp: "Tōkyō Ribenjāzu", nomeing: "Tokyo Revengers", disponibilidade: "Crunchyroll", genero: "Drama, Ação", 
+            {id: 11, season: "S1", nomejp: "Tōkyō Ribenjāzu", nomeing: "Tokyo Revengers", disponibilidade: "Crunchyroll", genero: "Drama, Ação, Sobrenatural", 
             episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/pt-br/tokyo-revengers", epnovo: "Finalizado",
             img: "https://cdn.aprendejaponeshoy.com/19815/tokyo-revengers-tv-anime-official-guide-book.jpg",
             vid: "https://www.youtube-nocookie.com/embed/ZUzQQAZZqO4"},
 
-            {id: 12, season: "S5", nomejp: "Boku no Hīrō Akademia", nomeing: "My Hero Academia", disponibilidade: "Crunchyroll", genero: "Ação", 
+            {id: 12, season: "S5", nomejp: "Boku no Hīrō Akademia", nomeing: "My Hero Academia", disponibilidade: "Crunchyroll", genero: "Ação, Comédia, Super-herói", 
             episodios: "25", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "Finalizado",
             img: "https://cdn.myanimelist.net/images/anime/1911/113611.jpg",
             vid: "https://www.youtube-nocookie.com/embed/zkGSYFke1oE"},
@@ -83,7 +84,7 @@ const App = {
             img: "https://m.media-amazon.com/images/M/MV5BZmI0OTI1OWQtYzRkNy00NGVlLWFhYzAtNzAzNWRkNjE0ZThiXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg",
             vid: "https://www.youtube-nocookie.com/embed/oEfNqrkatII"},
 
-            {id: 14, season: "S1", nomejp: "Ao-chan wa Benkyō ga Dekinai", nomeing: "Ao-chan Can't Study!", disponibilidade: "Crunchyroll", genero: "Finalizado", 
+            {id: 14, season: "S1", nomejp: "Ao-chan wa Benkyō ga Dekinai", nomeing: "Ao-chan Can't Study!", disponibilidade: "Crunchyroll", genero: "Comédia, Romance", 
             episodios: "12", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/pt-br/ao-chan-cant-study", epnovo: "Finalizado",
             img: "https://cdn.myanimelist.net/images/anime/1718/98214.jpg",
             vid: "https://www.youtube-nocookie.com/embed/qN17SimWp0U"},
@@ -93,37 +94,45 @@ const App = {
             img: "https://m.media-amazon.com/images/M/MV5BZTc3Y2ZhYTAtMjRlZS00YTY2LWIyOWMtMmYxYjUyNzA3NzVlXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg",
             vid: "https://www.youtube-nocookie.com/embed/6Q1cIHo7SdQ"},
 
-            {id: 16, season: "", nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Finalizado", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "Finalizado",
-            img: "",},
+            {id: 16, season: "S1", nomejp: "Mushoku Tensei: Isekai Ittara Honki Dasu", nomeing: "Mushoku Tensei: Jobless Reincarnation", disponibilidade: "Funimation", genero: "Drama, Fantasia, Ação, Ecchi", 
+            episodios: "24", temporada: "Outubro 2021", link: "https://www.funimation.com/shows/mushoku-tensei-jobless-reincarnation-p2/?qid=", epnovo: "Domingo",
+            img: "https://cdn.myanimelist.net/images/anime/1028/117777.jpg",
+            vid: "https://www.youtube-nocookie.com/embed/DTfgyQU-CDw"},
 
-            {id: 17, season: "", nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Finalizado", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "Finalizado",
-            img: "",},
+            {id: 17, season: "S1", nomejp: "Nichijou", nomeing: "Nichijou - My Ordinary Life", disponibilidade: "Funimation", genero: "Comédia, Slice of Life", 
+            episodios: "26", temporada: "Abril 2011", link: "https://www.funimation.com/shows/nichijou-my-ordinary-life/?qid=", epnovo: "Finalizado",
+            img: "https://cdn.myanimelist.net/images/anime/3/75617.jpg",
+            vid: "https://www.youtube-nocookie.com/embed/3od3pc8LOPs"},
 
-            {id: 18, season: "", nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Finalizado", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "Finalizado",
-            img: "",},
+            {id: 18, season: "S1", nomejp: "Rogu Horaizun", nomeing: "Log Horizon", disponibilidade: "Funimation", genero: "Ação, Aventura, Fantasia, Isekai", 
+            episodios: "25", temporada: "Outubro 2013", link: "https://www.funimation.com/shows/log-horizon-destruction-of-the-round-table/?qid=", epnovo: "Finalizado",
+            img: "https://image.tmdb.org/t/p/w342/gsQCqqjUUDKcKEgWdJE4SlSNbPg.jpg",
+            vid: "https://www.youtube-nocookie.com/embed/IG1VhJ75r8k"},
 
-            {id: 19, season: "", nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Finalizado", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "Finalizado",
-            img: "",},
+            {id: 19, season: "S1", nomejp: "Vivy: Fluorite Eye's Song", nomeing: "Vivy: Fluorite Eye's Song", disponibilidade: "Funimation", genero: "Ação, Sci-Fi, Suspense", 
+            episodios: "13", temporada: "Abril 2021", link: "https://www.funimation.com/shows/vivy-fluorite-eyes-song-/?qid=", epnovo: "Finalizado",
+            img: "https://m.media-amazon.com/images/M/MV5BZjMwOWJmNDQtNWRkMC00ODhjLTgyMGEtYzI0MjU3ZjBlNTUzXkEyXkFqcGdeQXVyODMyNTM0MjM@._V1_.jpg",
+            vid: "https://www.youtube-nocookie.com/embed/Y653dJQ_ecs"},
 
-            {id: 20, season: "", nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Finalizado", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "Finalizado",
-            img: "",},
+            {id: 20, season: "S1", nomejp: "Shadō Hausu", nomeing: "Shadows House", disponibilidade: "Funimation", genero: "Slice of Life, Mistério, Sobrenatural", 
+            episodios: "13", temporada: "Abril 2021", link: "https://www.funimation.com/shows/shadows-house/?qid=", epnovo: "Finalizado",
+            img: "https://cdn.myanimelist.net/images/anime/1424/113342.jpg",
+            vid: "https://www.youtube-nocookie.com/embed/t7lGIJGAMm0"},
 
-            {id: 21, season: "", nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Finalizado", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "Finalizado",
-            img: "",},
+            {id: 21, season: "S1", nomejp: "Tsuki to Laika to Nosferatu", nomeing: "Irina: The Vampire Cosmonaut", disponibilidade: "Funimation", genero: "Sci-fi, Fantasia", 
+            episodios: "12", temporada: "Outubro 2021", link: "https://www.funimation.com/shows/irina-the-vampire-cosmonaut/?qid=", epnovo: "Finalizado",
+            img: "https://cdn.myanimelist.net/images/anime/1393/118374.jpg",
+            vid: "https://www.youtube-nocookie.com/embed/XaD3ebxrxqk"},
 
-            {id: 22, season: "", nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Finalizado", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "Finalizado",
-            img: "",},
+            {id: 22, season: "S1", nomejp: "Hori-san and Miyamura-kun", nomeing: "Horimiya", disponibilidade: "Funimation", genero: "Comédia, Romance, Slice of Life", 
+            episodios: "13", temporada: "Janeiro 2021", link: "https://www.funimation.com/shows/horimiya/?qid=", epnovo: "Finalizado",
+            img: "https://cdn.myanimelist.net/images/anime/1695/111486.jpg",
+            vid: "https://www.youtube-nocookie.com/embed/CNs2IZQZcyI"},
 
-            {id: 23, season: "", nomejp: "takt op.Destiny", nomeing: "takt op.Destiny", disponibilidade: "Crunchyroll", genero: "Finalizado", 
-            episodios: "24", temporada: "Outubro 2021", link: "https://www.crunchyroll.com/takt-opdestiny", epnovo: "Finalizado",
-            img: "",},
+            {id: 23, season: "S1", nomejp: "Wārudo Torigā", nomeing: "World Trigger", disponibilidade: "Crunchyroll", genero: "Ação, Sci-Fi, Sobrenatural", 
+            episodios: "73", temporada: "Outubro 2014", link: "https://www.crunchyroll.com/world-trigger", epnovo: "Finalizado",
+            img: "https://cdn.myanimelist.net/images/anime/1783/106843.jpg",
+            vid: "https://www.youtube-nocookie.com/embed/pqc0AS1nFlA"},
         ],
 
         myAnim: []
@@ -343,7 +352,7 @@ const App = {
         el.container3.el.classList.add("el-alerta-el")
 
         App.helpers.style(el.container3.title2, {textFamily: "sans-serif", textAlign: "center", fontSize: "20px",
-        color: "#4E9DCA", fontWeight: "bold", position: "relative"})
+        color: "#f78589", fontWeight: "bold", position: "relative"})
         el.container3.title2.innerHTML = "Acesse a sua conta"
 
         App.helpers.style(el.container3.title3, {textFamily: "sans-serif", textAlign: "center", fontSize: "16px", position: "relative"})
@@ -452,89 +461,19 @@ const App = {
         App.elements.app.appendChild(el.backdrop)
     },
 
-    createAnimStats(anime) {
-        const container = document.createElement("div")
-        const header = document.createElement("div")
-        const img = document.createElement("img")
-        const l1 = document.createElement("div")
-        const v1 = document.createElement("div")
-        const l2 = document.createElement("div")
-        const v2 = document.createElement("div")
-        const l3 = document.createElement("div")
-        const v3 = document.createElement("div")
-        const l4 = document.createElement("div")
-        const v4 = document.createElement("div")
-        const l5 = document.createElement("div")
-        const v5 = document.createElement("div")
-        const btn = document.createElement("button")
-
-        container.classList.add("anime-card-container")
-        
-        header.classList.add("anime-card-header")
-        header.innerHTML = ""
-
-        l1.innerHTML = "Nome JP:"
-        v1.innerHTML = anime.nomejp
-        l1.classList.add("anime-card-l1")
-        v1.classList.add("anime-card-v1")
-
-        l2.innerHTML = "Nome EN:"
-        v2.innerHTML = anime.nomeing
-        l2.classList.add("anime-card-l2")
-        v2.classList.add("anime-card-v2")
-
-        l3.innerHTML = "Temporada:"
-        v3.innerHTML = anime.temporada
-        l3.classList.add("anime-card-l3")
-        v3.classList.add("anime-card-v3")
-
-        l4.innerHTML = "Disponível:"
-        v4.innerHTML = anime.disponibilidade
-        if (anime.disponibilidade === "Crunchyroll") {
-            v4.style.color = " #DF6300"
-        } 
-        if (anime.disponibilidade === "Funimation") {
-            v4.style.color = "#800080"
-        }
-        if (anime.disponibilidade === "Netflix") {
-            v4.style.color = "#E50914"
-        }
-        if (anime.disponibilidade === "Amazon Prime") {
-            v4.style.color = "#00A8E1"
-        }
-        l4.classList.add("anime-card-l4")
-        v4.classList.add("anime-card-v4")
-
-        l5.innerHTML = "Motor:"
-        l5.style.display = "none"
-        v5.innerHTML = ""
-        v5.style.display = "none"
-        l5.classList.add("anime-card-l5")
-        v5.classList.add("anime-card-v5")
-
-
-        //container.appendChild(l1)
-        //container.appendChild(v1)
-        //container.appendChild(l2)
-        //container.appendChild(v2)
-        //container.appendChild(l3)
-        //container.appendChild(v3)
-        //container.appendChild(l4)
-        //container.appendChild(v4)
-        //container.appendChild(l5)
-        //container.appendChild(v5)
-
-        return container
-    },
-
     createAnimCards(anime, isBuy) {
         const el = document.createElement("div")
         const header = document.createElement("div")
         const img = document.createElement("img")
+        const container5 = document.createElement("div")
+        const nome1 = document.createElement("div")
+        const temporada = document.createElement("div")
+        const genero = document.createElement("div")
+        const disponibilidade = document.createElement("div")
         const btn = document.createElement("button")
-        const stats = App.controllers.createAnimStats(anime)
         
         el.classList.add("anime-card")
+        
         el.onmouseover = function () {
             el.style.boxShadow = "0px 0px 3px 1px #b56a4c"
             // fall - #b56a4c
@@ -552,26 +491,34 @@ const App = {
             const content = App.controllers.createCardsContent(anime, isBuy)
             App.controllers.showModal(content)
         }
-        
-        img.classList.add("anime-card-img")
-        img.style.width = "0%"
-        img.style.height = "0%"
-        img.src = anime.img
 
-        header.classList.add("anime-card-header")
-        header.innerHTML = anime.nomeing + " - " + anime.season
+        container5.classList.add("anime-card-container5")
+        nome1.classList.add("anime-detail")
+        nome1.innerHTML = anime.nomeing
+        temporada.classList.add("anime-detail2")
+        temporada.innerHTML = " Temporada - " + anime.temporada
+        genero.classList.add("anime-detail2")
+        genero.innerHTML = " Gênero - " + anime.genero
+        disponibilidade.classList.add("anime-detail2")
+        disponibilidade.innerHTML = " Disponível - " + anime.disponibilidade
+        if (anime.disponibilidade === "Crunchyroll") {
+            disponibilidade.style.color = " #DF6300"
+        } 
+        if (anime.disponibilidade === "Funimation") {
+            disponibilidade.style.color = "#800080"
+        }
+        if (anime.disponibilidade === "Netflix") {
+            disponibilidade.style.color = "#E50914"
+        }
+        if (anime.disponibilidade === "Amazon Prime") {
+            disponibilidade.style.color = "#00A8E1"
+        }
 
-       // btn.classList.add("anime-card-btn")
-       // btn.innerHTML = isBuy ? "+" : "Retirar"
-        //btn.onclick = () => {
-        //    const content = App.controllers.createCardsContent(anime, isBuy)
-        //    App.controllers.showModal(content)
-       // }
-
-        //el.appendChild(img)
-        //el.appendChild(header)
-        //el.appendChild(stats)
-        //el.appendChild(btn)
+        container5.appendChild(nome1)
+        container5.appendChild(temporada)
+        container5.appendChild(genero)
+        container5.appendChild(disponibilidade)
+        el.appendChild(container5)
 
         return el
     },
@@ -658,6 +605,7 @@ const App = {
             } 
         }
         btn.disabled = isBuy ? App.state.myAnim.some(ani => ani.id === animelist.id) : false
+        
 
         l5.classList.add("anime-card-l5")
         l5.innerHTML = "Estúdio:"
@@ -829,7 +777,7 @@ const App = {
         search.addEventListener("keyup", (e) => {
             const searchString = e.target.value.toLowerCase();
             const filterCars = carslist.filter(ani => {
-                return ani.nomeing.toLowerCase().includes(searchString) || ani.nomejp.toLowerCase().includes(searchString) 
+                return ani.nomeing.toLowerCase().includes(searchString) || ani.nomejp.toLowerCase().includes(searchString)
             });
             App.state.animelist = filterCars
             App.controllers.renderAllAnimeCards()
@@ -842,11 +790,11 @@ const App = {
     bodySite() {
         const els = App.elements.body
         const Div3 = {border: "px solid red", display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center", 
-        alignItems: "center", alignContent: "center", fontFamily: "sans-serif", fontSize: "15px", padding: "0px", 
-        margin: "0px", overflow: "auto"};
+        alignItems: "center", fontFamily: "sans-serif", fontSize: "15px", padding: "0px", 
+        margin: "0px", overflow: "auto", backgroundColor: "#FFB7C5", width: "100%", height: "100%",};
 
         App.helpers.style(els.el, {border: "0px solid black" ,flexGrow: "1", margin: "0px", display: "flex",
-        alignItems:  "flex-start", flexDirection: "row", overflowX: "hidden", overflowY: "auto", backgroundColor: "#FFB7C5",})
+        alignItems:  "flex-start", flexDirection: "row", overflowX: "hidden", overflowY: "auto",})
 
 
 
