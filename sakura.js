@@ -8,6 +8,7 @@ const App = {
         this.controllers.searchDiv()
         this.controllers.bodySite()
         this.controllers.contaUser()
+        this.controllers.novaConta()
         this.controllers.renderAllAnimeCards()
         this.controllers.renderAllMyAnim()
         this.controllers.footerSite()
@@ -220,7 +221,9 @@ const App = {
         fontWeight: "bold", cursor: "pointer"})
         els.container2.newacc.innerHTML = "Não tem uma conta? <span class='criar-conta'>Crie uma agora!</span>"
         els.container2.newacc.onclick = () => {
-            window.location.href = ""
+            App.elements.cadastro.backdrop2.style.display = "flex"
+            App.elements.contaUser.backdrop2.style.display = "none"
+            App.elements.footer.el.style.display = "flex"
         }
 
         els.container2.verpass.classList.add("ver-password")
@@ -235,11 +238,6 @@ const App = {
             }
         }
 
-        App.helpers.style(els.footer, {backgroundColor: "#595a5a", width: "100%", height: "60px", display: "none", 
-        justifyContent: "center", alignItems: "center", alignContent: "center", overflow: "auto", flexDirection: "column",
-        textAlign: "center", margin: "0px", padding: "0px", fontSize: "13px", color: "white",})
-        els.footer.innerHTML = "© 2021 Projeto X. Todos os direitos reservados"
-
         els.container2.el.appendChild(els.container2.header2)
         els.container2.el.appendChild(els.container2.errolog)
         els.container2.el.appendChild(els.container2.usuario)
@@ -250,7 +248,180 @@ const App = {
         els.container2.el.appendChild(els.container2.newacc)
         els.backdrop2.appendChild(els.container2.el)
         App.elements.app.appendChild(els.backdrop2)
-        App.elements.app.appendChild(els.footer)
+    },
+
+    novaConta(){
+        const els = App.elements.cadastro
+        const nome = els.novaacc.nome
+        const user = els.novaacc.usuario2
+        const senha2 = els.novaacc.senha2
+        const senha3 = els.novaacc.senha3
+
+        App.helpers.style(els.backdrop2, {position: "relative", width: "100%", height: "100%",
+        background: "rgba(0, 0, 0, 0.1)", display: "none", justifyContent: "center", alignItems: "center",
+        alignContent: "center", overflow: "auto", flexDirection: "column", textAlign: "center", overflowX: "hidden",});
+
+        els.novaacc.el.classList.add("el-novaacc-el")
+
+        App.helpers.style(els.novaacc.header3, {textFamily: "sans-serif", textAlign: "center", fontSize: "16px",})
+        els.novaacc.header3.innerHTML = "Preencha os dados abaixo para criar sua conta na Sakura Petal"
+
+        els.novaacc.mininone.classList.add("mini-caract")
+        els.novaacc.mininone.innerHTML = "Insira no mínimo 4 caracteres"
+        App.helpers.style(els.novaacc.nome, {border: "0" , borderBottom: "2px solid #595a5a", outline: "none",
+        width: "196px"})
+        els.novaacc.nome.placeholder = "Nome"
+        nome.addEventListener("keyup", () => {
+            if (nome.value.length <= 3) {
+                els.novaacc.nome.style.borderBottom = "2px solid red"
+                validNome = false
+                els.novaacc.mininone.style.display = "block"
+            } else {
+                els.novaacc.nome.style.borderBottom = "2px solid green"
+                validNome = true
+                els.novaacc.mininone.style.display = "none"
+            }
+        })
+        let validNome = false
+
+        els.novaacc.miniuser.classList.add("mini-caract2")
+        els.novaacc.miniuser.innerHTML = "Insira no mínimo 4 caracteres"
+        App.helpers.style(els.novaacc.usuario2, {border: "0" , borderBottom: "2px solid #595a5a", outline: "none",
+        width: "196px",})
+        els.novaacc.usuario2.placeholder = "Usuário"
+        user.addEventListener("keyup", () => {
+            if (user.value.length <= 3) {
+                els.novaacc.usuario2.style.borderBottom = "2px solid red"
+                validUser = false
+                els.novaacc.miniuser.style.display = "block"
+            } else {
+                els.novaacc.usuario2.style.borderBottom = "2px solid green"
+                validUser = true
+                els.novaacc.miniuser.style.display = "none"
+            }
+        })
+        let validUser = false
+
+        els.novaacc.minisenha2.classList.add("mini-caract3")
+        els.novaacc.minisenha2.innerHTML = "Insira no mínimo 6 caracteres"
+        App.helpers.style(els.novaacc.senha2, {border: "0" , borderBottom: "2px solid #595a5a", outline: "none",
+        paddingRight: "20px", width: "178px",})
+        els.novaacc.senha2.placeholder = "Senha"
+        senha2.setAttribute("type", "password")
+        senha2.addEventListener("keyup", () => {
+            if (senha2.value.length <= 5) {
+                els.novaacc.senha2.style.borderBottom = "2px solid red"
+                validSenha2 = false
+                els.novaacc.minisenha2.style.display = "block"
+                senha3.disabled = true
+            } else {
+                els.novaacc.senha2.style.borderBottom = "2px solid green"
+                validSenha2 = true
+                els.novaacc.minisenha2.style.display = "none"
+                senha3.disabled = false
+            }
+        })
+        let validSenha2 = false
+
+        els.novaacc.minisenha3.classList.add("mini-caract4")
+        els.novaacc.minisenha3.innerHTML = "As senhas não conferem"
+        App.helpers.style(els.novaacc.senha3, {border: "0" , borderBottom: "2px solid #595a5a", outline: "none",
+        paddingRight: "20px", width: "178px",})
+        els.novaacc.senha3.placeholder = "Confirmar senha"
+        senha3.disabled = true
+        senha3.setAttribute("type", "password")
+        senha3.addEventListener("keyup", () => {
+             if (senha2.value != senha3.value) {
+                els.novaacc.senha3.style.borderBottom = "2px solid red"
+                validSenha3 = false
+                els.novaacc.minisenha3.style.display = "block"
+            } else {
+                els.novaacc.senha3.style.borderBottom = "2px solid green"
+                validSenha3 = true
+                els.novaacc.minisenha3.style.display = "none"
+            }
+        })
+        let validSenha3 = false
+
+        els.novaacc.erroconta.classList.add("erro-conta")
+        els.novaacc.erroconta.innerHTML = "Preencha todos os campos corretamente"
+        els.novaacc.sucssconta.classList.add("sucs-conta")
+        els.novaacc.sucssconta.innerHTML = "Cadastrando usuário..."
+        els.novaacc.btn3.classList.add("account-btn2")
+        els.novaacc.btn3.innerHTML = "Criar conta"
+        els.novaacc.btn3.onclick = () => {
+            if (validNome && validUser && validSenha2 && validSenha3) {
+                let ListaUser = JSON.parse(localStorage.getItem("ListaUser") || "[]")
+                ListaUser.push({
+                    nomeCad: nome.value,
+                    usuarioCad: user.value,
+                    senhaCad: senha2.value
+                })
+                localStorage.setItem("ListaUser", JSON.stringify(ListaUser))
+                els.novaacc.sucssconta.style.display = "block"
+                els.novaacc.erroconta.style.display = "none"
+                setTimeout(() => {
+                    els.novaacc.sucssconta.style.display = "none"
+                    window.location.href = ""
+                }, 2000)
+                
+            } else {
+                els.novaacc.erroconta.style.display = "block"
+                els.novaacc.sucssconta.style.display = "none"
+                setTimeout(() => {
+                    els.novaacc.erroconta.style.display = "none"
+                }, 2000)
+            }
+        }
+
+        App.helpers.style(els.novaacc.btn4, {textFamily: "sans-serif", textAlign: "center", fontSize: "15px",
+        fontWeight: "bold", cursor: "pointer",})
+        els.novaacc.btn4.innerHTML = "Cancelar"
+        els.novaacc.btn4.onclick = () => {
+            window.location.reload()
+        },
+
+        els.novaacc.verpass2.classList.add("ver-password2")
+        els.novaacc.verpass2.src = "https://img.icons8.com/color/48/000000/invisible.png"
+        els.novaacc.verpass2.onclick = () => {
+            if (senha2.type === "password") {
+                senha2.type = "text"
+                els.novaacc.verpass2.src = "https://img.icons8.com/color/48/000000/visible.png"
+            } else {
+                senha2.type = "password"
+                els.novaacc.verpass2.src = "https://img.icons8.com/color/48/000000/invisible.png"
+            }
+        }
+
+        els.novaacc.verpass3.classList.add("ver-password3")
+        els.novaacc.verpass3.src = "https://img.icons8.com/color/48/000000/invisible.png"
+        els.novaacc.verpass3.onclick = () => {
+            if (senha3.type === "password") {
+                senha3.type = "text"
+                els.novaacc.verpass3.src = "https://img.icons8.com/color/48/000000/visible.png"
+            } else {
+                senha3.type = "password"
+                els.novaacc.verpass3.src = "https://img.icons8.com/color/48/000000/invisible.png"
+            }
+        }
+
+        els.novaacc.el.appendChild(els.novaacc.header3)
+        els.novaacc.el.appendChild(els.novaacc.erroconta)
+        els.novaacc.el.appendChild(els.novaacc.sucssconta)
+        els.novaacc.el.appendChild(els.novaacc.nome)
+        els.novaacc.el.appendChild(els.novaacc.mininone)
+        els.novaacc.el.appendChild(els.novaacc.usuario2)
+        els.novaacc.el.appendChild(els.novaacc.miniuser)
+        els.novaacc.el.appendChild(els.novaacc.senha2)
+        els.novaacc.el.appendChild(els.novaacc.minisenha2)
+        els.novaacc.el.appendChild(els.novaacc.verpass2)
+        els.novaacc.el.appendChild(els.novaacc.senha3)
+        els.novaacc.el.appendChild(els.novaacc.minisenha3)
+        els.novaacc.el.appendChild(els.novaacc.verpass3)
+        els.novaacc.el.appendChild(els.novaacc.btn3)
+        els.novaacc.el.appendChild(els.novaacc.btn4)
+        els.backdrop2.appendChild(els.novaacc.el)
+        App.elements.app.appendChild(els.backdrop2)
     },
 
     favFlow(anime){
@@ -368,7 +539,10 @@ const App = {
         el.container3.cad.innerHTML = "Não tem uma conta? <span class='criar-conta'>Crie uma agora!</span>"
 
         el.container3.cad.onclick = () => {
-            window.location.href = ""
+            App.elements.cadastro.backdrop2.style.display = "flex"
+            App.elements.body.el.style.display = "none"
+            App.elements.footer.el.style.display = "flex"
+            el.backdrop3.style.display = "none"
         }
 
         App.helpers.style(el.container3.close2.el, {
@@ -683,10 +857,7 @@ const App = {
             backgroundRepeat: "no-repeat",
         })
         els.sakurax.onclick = () => {
-            App.elements.contaUser.backdrop2.style.display = "none"
-            App.elements.body.el.style.display = "flex"
-            App.elements.contaUser.footer.style.display = "none"
-            els.isl.style.display = "flex"
+            window.location.reload()
         }
 
 
@@ -711,8 +882,7 @@ const App = {
         els.users.user.onclick = () => {
             App.elements.contaUser.backdrop2.style.display = "flex"
             App.elements.body.el.style.display = "none"
-            App.elements.contaUser.footer.style.display = "flex"
-            els.isl.style.display = "none"
+            App.elements.footer.el.style.display = "flex"
         }
 
         App.helpers.style(els.users.favan, {
@@ -810,7 +980,7 @@ const App = {
         const els = App.elements.footer
 
         App.helpers.style(els.el, {
-            display: "flex",
+            display: "none",
             justifyContent: "center",
             alignItems: "center",
             alignContent: "center",
@@ -824,7 +994,7 @@ const App = {
 
         els.el.innerHTML = "2021 Sakura Petal. Todos os direitos reservados"
 
-        //App.elements.app.appendChild(els.el)
+        App.elements.app.appendChild(els.el)
     },
 
     createComponents() {
@@ -899,6 +1069,27 @@ const App = {
                 errolog: document.createElement("div"),
             },
             footer: document.createElement("div"),
+        },
+        cadastro: {
+            backdrop2: document.createElement("div"),
+            novaacc: {
+                el: document.createElement("div"),
+                header3: document.createElement("div"),
+                nome: document.createElement("input"),
+                usuario2: document.createElement("input"),
+                senha2: document.createElement("input"),
+                senha3: document.createElement("input"),
+                btn3: document.createElement("button"),
+                btn4: document.createElement("div"),
+                verpass2: document.createElement("img"),
+                verpass3: document.createElement("img"),
+                mininone: document.createElement("div"),
+                miniuser: document.createElement("div"),
+                minisenha2: document.createElement("div"),
+                minisenha3: document.createElement("div"),
+                erroconta: document.createElement("div"),
+                sucssconta: document.createElement("div"),
+             },
         },
 
         conta: {
