@@ -169,7 +169,7 @@ const App = {
         App.helpers.style(els.container2.senha, {border: "none" , borderBottom: "2px solid #595a5a", outline: "none",
         paddingRight: "20px", width: "179px",})
         els.container2.senha.placeholder = "Senha"
-        var senha = els.container2.senha
+        let senha = els.container2.senha
         senha.setAttribute("type", "password")
 
         els.container2.forpass.classList.add("forgot-password")
@@ -183,10 +183,10 @@ const App = {
         els.container2.btn2.classList.add("account-btn2")
         els.container2.btn2.innerHTML = "Entrar"
         entrar.addEventListener("click", function(){
-            let usuario = els.container2.usuario
-            let senha = els.container2.senha
-            let ListaUser = []
-            let userValid = {
+            const usuario = els.container2.usuario
+            const senha = els.container2.senha
+            const ListaUser = []
+            const userValid = {
                 nome: "",
                 user: "",
                 senha: ""
