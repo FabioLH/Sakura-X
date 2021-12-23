@@ -10,6 +10,7 @@ const App = {
         this.controllers.contaUser()
         this.controllers.novaConta()
         this.controllers.renderAllAnimeCards()
+        this.controllers.loadLocalData()
         this.controllers.renderAllMyAnim()
         this.controllers.footerSite()
 
@@ -147,6 +148,13 @@ const App = {
         App.elements.modal.container.body.appendChild(body)
     },
 
+    loadLocalData(){
+        const data = localStorage.getItem(App.state.storageKey);
+        if(data){
+            App.state = JSON.parse(data);
+        } 
+    },
+
     contaUser(){
         const els = App.elements.contaUser
         const entrar = els.container2.btn2
@@ -185,15 +193,15 @@ const App = {
         entrar.addEventListener("click", function(){
             const usuario = els.container2.usuario
             const senha = els.container2.senha
-            const ListaUser = []
-            const userValid = {
+            let ListaUser = []
+            let userValid = {
                 nome: "",
                 user: "",
                 senha: ""
             }
             ListaUser = JSON.parse(localStorage.getItem("ListaUser"))
             ListaUser.forEach((item) => {
-                if (usuario.value == item.usuarioCad && senha.value == item.senhaCad) {
+                if (usuario.value === item.usuarioCad && senha.value == item.senhaCad) {
                     userValid = {
                         nome: item.nomeCad,
                         user: item.usuarioCad,
@@ -428,7 +436,7 @@ const App = {
         App.state.myAnim.push(anime) 
                 
         const arr = App.state.animelist.filter((ani) => {
-            return ani.id !== animelist.id
+            return ani.id !== anime.id
         })
         App.state.animelist = arr
 
@@ -440,7 +448,7 @@ const App = {
     desfavFlow(anime){
         App.state.animelist.push(anime) 
         const arr = App.state.myAnim.filter((ani) => {
-            return ani.id !== animelist.id
+            return ani.id !== anime.id
         })
         App.state.myAnim = arr
 
@@ -773,12 +781,12 @@ const App = {
                 App.elements.alerta.backdrop3.style.display = "flex"
                 App.elements.alerta.container3.title3.innerHTML = "Entre no Sakura Petal para adicionar animes na sua lista."
             } else if (isBuy) {
-                App.controllers.favFlow(cars)
+                App.controllers.favFlow(anime)
             } else {
-                App.controllers.desfavFlow(cars)
+                App.controllers.desfavFlow(anime)
             } 
         }
-        btn.disabled = isBuy ? App.state.myAnim.some(ani => ani.id === animelist.id) : false
+        btn.disabled = isBuy ? App.state.myAnim.some(ani => ani.id === anime.id) : false
         
 
         l5.classList.add("anime-card-l5")
@@ -895,6 +903,21 @@ const App = {
             cursor: "pointer",
         })
         els.users.favan.src = "https://cdn-icons-png.flaticon.com/512/1531/1531041.png"
+        els.users.favan.onclick = function () {
+            if (localStorage.getItem("token") === null) {
+                App.elements.alerta.backdrop3.style.display = "flex"
+                App.elements.alerta.container3.title3.innerHTML = "É necessário entrar na sua conta para acessar sua lista de favoritos."
+
+            } else if (App.elements.body.itens.all.style.display === "flex") {
+                App.elements.body.itens.all.style.display = "none"
+                App.elements.body.itens.fav.style.display = "flex"
+                els.users.favan.src = "https://cdn-icons-png.flaticon.com/512/0/340.png"
+            } else {
+                App.elements.body.itens.fav.style.display = "none"
+                App.elements.body.itens.all.style.display = "flex"
+                els.users.favan.src = "https://cdn-icons-png.flaticon.com/512/1531/1531041.png"
+            } 
+        }
 
         els.users.searchicon.classList.add("search-icon")
         els.users.searchicon.src = "https://www.pinclipart.com/picdir/big/149-1490404_clipart-computer-magnifying-glass-anime-magnifying-glass-png.png"
@@ -962,6 +985,9 @@ const App = {
         const Div3 = {border: "px solid red", display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center", 
         alignItems: "center", fontFamily: "sans-serif", fontSize: "15px", padding: "0px", 
         margin: "0px", overflow: "auto", backgroundColor: "#FFB7C5", width: "100%", height: "100%",};
+        const Div4 = {border: "px solid red", display: "none", flexDirection: "row", flexWrap: "wrap", justifyContent: "center", 
+        alignItems: "center", fontFamily: "sans-serif", fontSize: "15px", padding: "0px", 
+        margin: "0px", overflow: "auto", backgroundColor: "#FFB7C5", width: "100%", height: "100%",};
 
         App.helpers.style(els.el, {border: "0px solid black" ,flexGrow: "1", margin: "0px", display: "flex",
         alignItems:  "flex-start", flexDirection: "row", overflowX: "hidden", overflowY: "auto",})
@@ -970,9 +996,11 @@ const App = {
 
 
         App.helpers.style(els.itens.all, Div3)
+        App.helpers.style(els.itens.fav, Div4)
 
 
         els.el.appendChild(els.itens.all)
+        els.el.appendChild(els.itens.fav)
         App.elements.app.appendChild(els.el)
     },
 
