@@ -772,6 +772,21 @@ const App = {
         l4.classList.add("anime-card-l4")
         v4.classList.add("anime-card-v4")
 
+        l5.classList.add("anime-card-l5")
+        l5.innerHTML = "Estúdio:"
+        v5.innerHTML = "Qualquer um"
+        v5.classList.add("anime-card-v5")
+
+        l6.classList.add("anime-card-l6")
+        l6.innerHTML = "Temporada:"
+        v6.innerHTML = anime.temporada
+        v6.classList.add("anime-card-v6")
+
+        l7.classList.add("anime-card-l7")
+        l7.innerHTML = "Nome JP:"
+        v7.innerHTML = anime.nomejp
+        v7.classList.add("anime-card-v7")
+
         btn.classList.add("anime-card-btn")
         btn.innerHTML = isBuy ? "Favoritar" : "Desfavoritar"
         btn.style.marginTop = "5px"
@@ -787,22 +802,6 @@ const App = {
             } 
         }
         btn.disabled = isBuy ? App.state.myAnim.some(ani => ani.id === anime.id) : false
-        
-
-        l5.classList.add("anime-card-l5")
-        l5.innerHTML = "Estúdio:"
-        v5.innerHTML = "Qualquer um"
-        v5.classList.add("anime-card-v5")
-
-        l6.classList.add("anime-card-l6")
-        l6.innerHTML = "Temporada:"
-        v6.innerHTML = anime.temporada
-        v6.classList.add("anime-card-v6")
-
-        l7.classList.add("anime-card-l7")
-        l7.innerHTML = "Nome JP:"
-        v7.innerHTML = anime.nomejp
-        v7.classList.add("anime-card-v7")
 
         el.appendChild(img)
         el.appendChild(header)
@@ -822,6 +821,7 @@ const App = {
         container.appendChild(l7)
         container.appendChild(v7)
         el.appendChild(btn)
+
         return el
     },
 
@@ -845,7 +845,7 @@ const App = {
 
         for (let i = 0; i < App.state.myAnim.length; i++) {
             const anime = App.state.myAnim[i];
-            const el = this.createAnimCards(anime, true)
+            const el = this.createAnimCards(anime, false)
             container.fav.appendChild(el)
             container.favMyCards.push(el)
         } 
